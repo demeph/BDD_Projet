@@ -1,0 +1,33 @@
+----------------------------------------------- IT WORKS
+
+idCine,franchise,nbSalles,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox,adresse,ville,idPers,nomP,prenomP,idFilm,nomFilm,dateSortie,role,public,duree,compatible3D,horaire,idSeance,dateProjection,diffusion3D,idClient,nomC,prenomC,numReservation,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes
+
+
+
+idCine-->franchise,nbSalles;
+idCine,numSalle-->salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox;
+idCine-->adresse,ville,nbSalles;
+idCine,horaire,dateProjection,numSalle-->nomFilm,dateSortie,diffusion3D;
+idPers-->nomP,prenomP;
+idPers,idFilm-->role;
+idFilm-->nomFilm,dateSortie;
+idFilm-->public,idPers,duree,compatible3D;
+idFilm,role-->public,idPers,duree,compatible3D,idPers;
+horaire,idFilm,idCine-->numSalle;
+idSeance-->adresse,ville,horaire,dateProjection,numSalle;
+idClient-->nomC,prenomC;
+idClient,numReservation-->adresse,ville,horaire,dateProjection,numSalle,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes;
+
+
+
+We can decompose the single relation like so:
+Relation 1 is idClient,nomC,prenomC
+Relation 2 is idCine,idFilm,idSeance,idClient,numReservation
+Relation 3 is idClient,numReservation,adresse,ville,horaire,dateProjection,numSalle,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes
+Relation 4 is idCine,horaire,dateProjection,numSalle,nomFilm,dateSortie,diffusion3D
+Relation 5 is horaire,idFilm,idCine,numSalle
+Relation 6 is idPers,nomP,prenomP
+Relation 7 is idSeance,adresse,ville,horaire,dateProjection,numSalle
+Relation 8 is idFilm,role,nomFilm,dateSortie,public,duree,compatible3D,idPers
+Relation 9 is idCine,franchise,adresse,ville,nbSalles
+Relation 10 is idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox

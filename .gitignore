@@ -1,3 +1,7 @@
 ~.log
 ~.synctex.gz
 ~.aux
+*.aux
+*.bbl
+*.blg
+*.log
