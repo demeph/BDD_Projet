@@ -4,7 +4,7 @@
 - $adresse, ville, numSalle \rightarrow SallecompatibleEn3D, nbPlaceStandard, nbPlaceHandicape,nbDbox$ 
 - $nomFilm, dateSortie \rightarrow public, idPers AS idReal, durée, compatible3D$
 - $nomfilm, dateSortie, role \rightarrow idPers$
-- $adresse, ville, horaire, date, numSalle \rightarrow nomFilm, dateSortie, diffusionen3D $
+- $adresse, ville, horaire, date_projection, numSalle \rightarrow nomFilm, dateSortie, diffusionen3D $
 - $nomC, prenomC, numRes \rightarrow nbPlaceStandardRes, nbPlaceHandicapeRes, \\ nbDboxRes, nomfilm, adresse, ville, salle, horaire$ 
 - $horaire, nomfilm, adresse, ville \rightarrow  numsalle$ 
 
@@ -23,13 +23,42 @@ ___________________________________________________________
 
 {adresse}+={adresse}
 {ville}+={ville}
---> adresse, ville  nécéssaire
+--> nécéssaire
 
 2eme DF :
 
 {adresse}+={adresse}
 {ville}+={ville}
+{numSalle}+={numSalle}
+--> nécéssaire
 
+3eme DF :
 
+{nomFilm}+={nomFilm}
+{dateSortie}+={dateSortie}
+--> nécéssaire
 
- 
+4eme DF :
+
+{nomFilm}+={nomFilm}
+{dateSortie}+={dateSortie}
+{role}+={role}
+--> nécéssaire
+
+5eme DF :
+
+{adresse}+={adresse}
+{ville}+={ville}
+{horaire}+={horaire}
+{date_projection}+={date_projection}
+{numSalle}+={numSalle}
+--> nécéssaire
+
+6eme DF :
+
+{nomClient}+={nomClient}
+{prenomClient}+={prenomClient}
+{numReservation}+={numRservation}
+--> nécéssaire
+
+7eme DF :
