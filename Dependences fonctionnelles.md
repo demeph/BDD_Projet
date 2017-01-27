@@ -5,7 +5,6 @@
 - $nomFilm, dateSortie \rightarrow public, idPers AS idReal, durée, compatible3D$
 - $nomfilm, dateSortie, role \rightarrow idPers$
 - $adresse, ville, horaire, date_projection, numSalle \rightarrow nomFilm, dateSortie, diffusionen3D $
-- $nomC, prenomC, numRes \rightarrow nbPlaceStandardRes, nbPlaceHandicapeRes, \\ nbDboxRes, nomfilm, adresse, ville, salle, horaire$ 
 - $horaire, nomfilm, adresse, ville \rightarrow  numsalle$ 
 
 - $idCine \right​arrow adresse, ville$
@@ -13,7 +12,6 @@
 - $idPers \rightarrow nom, prenom$
 - $idPers, idFilm \rightarrow role$
 - $idCine \rightarrow nbSalles$
-- $idClient \rightarrow nomC, prenomC$
 - $idSeance \rightarrow adresse, ville, horaire, dateSortie, numSalle$
 
 
@@ -53,12 +51,3 @@ ___________________________________________________________
 {date_projection}+={date_projection}
 {numSalle}+={numSalle}
 --> nécéssaire
-
-6eme DF :
-
-{nomClient}+={nomClient}
-{prenomClient}+={prenomClient}
-{numReservation}+={numRservation}
---> nécéssaire
-
-7eme DF :
