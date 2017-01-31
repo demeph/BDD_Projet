@@ -3,7 +3,6 @@
 idCine,franchise,nbSalles,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox,adresse,ville,idPers,nomP,prenomP,idFilm,nomFilm,dateSortie,role,public,duree,compatible3D,horaire,idSeance,dateProjection,diffusion3D,idClient,nomC,prenomC,numReservation,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes
 
 
-
 idCine-->franchise,nbSalles;
 idCine,numSalle-->salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox;
 idCine-->adresse,ville,nbSalles;
@@ -12,12 +11,11 @@ idPers-->nomP,prenomP;
 idPers,idFilm-->role;
 idFilm-->nomFilm,dateSortie;
 idFilm-->public,idPers,duree,compatible3D;
-idFilm,role-->public,idPers,duree,compatible3D,idPers;
+idFilm,role-->idPers;
 horaire,idFilm,idCine-->numSalle;
 idSeance-->adresse,ville,horaire,dateProjection,numSalle;
 idClient-->nomC,prenomC;
 idClient,numReservation-->adresse,ville,horaire,dateProjection,numSalle,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes;
-
 
 
 We can decompose the single relation like so:
