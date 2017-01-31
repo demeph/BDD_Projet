@@ -6,8 +6,7 @@
 
 \begin{document}
 
-\vspace{1cm}
-
+\vspace{0.5cm}
 
 \section{Dependances fonctionelles}
 
@@ -29,13 +28,13 @@
 - $idClient \rightarrow nomC, prenomC$ \\
 - $idSeance \rightarrow adresse, ville, horaire, dateSortie, numSalle$ \\
 
-\vspace{1cm}
+\vspace{0.5cm}
 
 \section{Algo de Bernstein}
 
 \subsection{pas de 1}
 
-\vspace{1cm}
+\vspace{0.5cm}
 
 \noindent1ere DF :\\
 
@@ -43,7 +42,7 @@
 {ville}+={ville} \\
 --> nécéssaire \\
 
-\vspace{1cm}
+\vspace{0.5cm}
 
 \noindent2eme DF : \\
 
@@ -52,7 +51,7 @@
 {numSalle}+={numSalle} \\
 --> nécéssaire \\
 
-\vspace{1cm}
+\vspace{0.5cm}
 
 \noindent3eme DF : \\
 
@@ -60,7 +59,7 @@
 {dateSortie}+={dateSortie} \\
 --> nécéssaire \\
 
-\vspace{1cm}
+\vspace{0.5cm}
 
 \noindent4eme DF : \\
 
@@ -69,7 +68,7 @@
 {role}+={role} \\
 --> nécéssaire \\
 
-\vspace{1cm}
+\vspace{0.5cm}
 
 \noindent5eme DF : \\
 
@@ -80,7 +79,7 @@
 {numSalle}+={numSalle} \\
 --> nécéssaire \\
 
-\vspace{1cm}
+\vspace{0.5cm}
 
 \noindent6eme DF : \\
 
@@ -89,14 +88,15 @@
 {numReservation}+={numReservation} \\
 --> nécéssaire \\
 
-\vspace{1cm}
+\vspace{0.5cm}
 
 \noindent7eme DF : \\
 
 \noindent{horaire}+={horaire} \\
 {nomFilm}+={nomFilm} \\
 --> nécéssaire
-\vspace{1cm}
+
+\vspace{0.5cm}
 
 \noindent8eme DF : \\
 
@@ -104,49 +104,56 @@
 {idPers}+={idPers, nomP, prenomP} \\
 {idFilm}+={idFilm, nomFilm, dateSortie, public, idPers AS idReal, duree, compatible3D} \\
 
-\vspace{1cm}
+\vspace{0.5cm}
 
 \subsection{pas de 2}
 
 pas d'attributs superflus à gauche
 
-\vspace{1cm}
+\vspace{0.5cm}
 
 \subsection{pas de 3}
 
-\vspace{1cm}
+\vspace{0.5cm}
 
 \underline{adresse, ville} $+$ \\
-franchise, nbSalles\\
+1- franchise, nbSalles\\
 
-\vspace{1cm}
+\vspace{0.5cm}
 
 \underline{adresse, ville, numSalle} $+$ \\
-franchise, nbSalles, salleCompatible3D, nbPlaceHandicape, nbPlaceStandard, nbDbox\\
+1- franchise, nbSalles, salleCompatible3D, nbPlaceHandicape, nbPlaceStandard, nbDbox\\
 
-\vspace{1cm}
+\vspace{0.5cm}
 
 \underline{nomFilm, dateSortie} $+$ \\
-public, idPers AS idReal, duree, compatible3D\\
+1- public, idPers, duree, compatible3D\\
+2- nomP, prenomP\\
 
-\vspace{1cm}
+\vspace{0.5cm}
 
 \underline{nomFilm, dateSortie, role} $+$ \\
-public, idPers AS idReal, duree, compatible3D, idPers AS idAct\\
+1- public, idPers, duree, compatible3D\\
+2- nomP, prenomP\\
 
-\vspace{1cm}
+\vspace{0.5cm}
 
-\underline{adresse, ville, horaire, datePojection, nimSalle} $+$ \\
-franchise, nbSalles, salleCompatible3D, nbPlaceHandicape, nbPlaceStandard, nbDbox, nomFilm, dateSortie, diffusionEn3D\\
+\underline{adresse, ville, horaire, datePojection, numSalle} $+$ \\
+1- franchise, nbSalles, salleCompatible3D, nbPlaceHandicape, nbPlaceStandard, nbDbox, nomFilm, dateSortie, diffusionEn3D\\
+2- public, idPers, duree, compatible3D\\
+3- nomP, prenomP\\
 
-\vspace{1cm}
+\vspace{0.5cm}
 
 \underline{nomC, prenomC, numReservation} $+$ \\
-addresse, ville, horaire, dateProjection, numSalle, nbPlaceHandicape, nbPlaceStandard, nbDbox\\
+1- addresse, ville, horaire, dateProjection, numSalle, nbPlaceHandicape, nbPlaceStandard, nbDbox\\
+2- franchise, nbSalle, nomFilm, dateSortie, difusionEn3D\\
+3- public, idPers, duree, compatible3D\\
+4- nomP, prenomP\\
 	
-\vspace{1cm}
+\vspace{0.5cm}
 
 \underline{horaire, nomFilm, adresse, ville} $+$ \\
-franchise, numSalle, nbSalle\\
+1- franchise, numSalle, nbSalle\\
 
 \end{document}
