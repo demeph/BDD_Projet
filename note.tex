@@ -297,9 +297,9 @@
 			
 						Eliminons tout d'abord les dfs qui sont préservées par transitivité : \\
 			
-							\noindent- $ 1 idCine \rightarrow adresse, ville$ \\
-							- $2 adresse, ville \rightarrow franchise, nbsalle$ \\
-							- $ 3 idCine \rightarrow franchise, nbSalles$ \\
+							\noindent- (1) idCine $\rightarrow$ adresse, ville \\
+							- (2) adresse, ville $\rightarrow$ franchise, nbsalle \\
+							- (3) idCine $\rightarrow$ franchise, nbSalles \\
 							
 							Si l'on prend les dfs 1, 2 et 3, on remarque que l'on peut supprimer la 3 car on peut retrouver celle-ci par transitivité. \\
 							Reprenons donc nos dfs restantes : \\
@@ -321,9 +321,7 @@
 						\noindent - (1) idCine $\rightarrow$ adresse, ville \\
 							\\
 							\underline{idCine+} \\
-							idCIne\\
-							\underline{numReservation+} \\
-							numReservation \\	
+							idCine\\
 							\\									
 						$\rightarrow$ it's OK \\		
 							
@@ -442,9 +440,9 @@
 						- (11) idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D \\
 															
 						On constate que l'on est bien en 1FN, ainsi qu'en 2FN. Cependant nous ne sommes pas en 3eme forme normal. En effet, avec les dfs ci-dessus, nous obtenons la clé suivante : \{idCine, idClient, numReservation, role\}. \\
-						Hors avec cette clé, nous avons des attributs non clés, qui détermines d'autres attributs non clés.adresse et ville sont deux attributs non clé qui détermine franchise et nbSalle qui sont eux aussi non clés. \\
+						Hors avec cette clé, nous avons des attributs non clés, qui déterminent d'autres attributs non clés. Par exemple, adresse et ville sont deux attributs non clé qui détermine franchise et nbSalle qui sont eux aussi non clés. \\
 															
-					\subsection{Partition de la CV et et construction des schémas} 	
+					\subsection{Partition de la CV et construction des schémas} 	
 					
 						\noindent R1 = \{idCine, adresse, ville\} \\  DF1 = \{idCine $\rightarrow$ adresse, ville\} \\
 						\\
