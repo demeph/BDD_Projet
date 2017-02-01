@@ -56,7 +56,8 @@
 		\vspace{0.5cm}
 		
 		Dans le cadre de ce projet nous devons créer une base de données. Nous avons décidés de modéliser la gestion de cinémas sur une grande échelle. Par exemple nous voulons savoir quels sont les cinémas de France, à qui ils appartiennent (Pathé,UGC, etc.) et ce qu'ils proposent. Comme notre modèle se base sur une certaine réalité voici comment nous avons décomposé la chose, prenons  l'exemple d'un cinéma : \\
-Le cinéma Pathé à Atlantis, dans la ville de Nantes. Tout d'abord on voit que un cinéma est identifié par une adresse et une ville. Ensuite, notre cinéma possède des salles dans lesquelles seront diffusés des films. Chaque film est composé d'une équipe d'acteurs, d'un réalisateur et d'une date de sortie. Il peut être compatible, ou non, à la 3D. Nos salle quant à elles, possèdent un certain nombre de places qui sont réparties entre les places "normales" et les places pour les handicapés ainsi que les nouveaux sièges dBox (sièges bougeant en même temps que le film). Si elles sont compatibles, elles ont la possibilité de diffuser en 3D. Lorsqu'un film est diffusé dans une salle on appelle ça une Séance, notre séance définit le tout c'est à dire "Tel film dans tel cinéma à telle heure". Aujourd'hui si on va au cinéma il est possible de réserver sa séance, autrement dit on réserve pour un film à une horaire précise dans un cinéma donné et le nombre de places que l'on réserve, ainsi que le type de places réservés. 
+		\indent Le cinéma Pathé à Atlantis, dans la ville de Nantes. Tout d'abord on voit que un cinéma est identifié par une adresse et une ville. Ensuite, notre cinéma possède des salles dans lesquelles seront diffusés des films. Chaque film est composé d'une équipe d'acteurs, d'un réalisateur et d'une date de sortie. Il peut être compatible, ou non, à la 3D. \\ 				\indent Nos salle quant à elles, possèdent un certain nombre de places qui sont réparties entre les places "normales" et les places pour les handicapés ainsi que les nouveaux sièges dBox (sièges bougeant en même temps que le film). Si elles sont compatibles, elles ont la possibilité de diffuser en 3D. \\
+		\indent Lorsqu'un film est diffusé dans une salle on appelle ça une Séance, notre séance définit le tout c'est à dire "Tel film dans tel cinéma à telle heure". Aujourd'hui si on va au cinéma il est possible de réserver sa séance, autrement dit on réserve pour un film à une horaire précise dans un cinéma donné et le nombre de places que l'on réserve, ainsi que le type de places réservés. 
 		
 		\vspace{0.5cm}
 				
@@ -74,7 +75,7 @@ Le cinéma Pathé à Atlantis, dans la ville de Nantes. Tout d'abord on voit que
 		- (8) idReal $\rightarrow$ nomR, prenomR \\
 		- (9) idAct $\rightarrow$ nomA, prenomA \\
 		- (10) idClient $\rightarrow$ nomC, prenomC \\
-		- (11) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBox, idSeance \\
+		- (11) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBoxRes, idSeance \\
 		- (12) idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D \\
 		
 	\section{Algo de Bernstein}
@@ -128,7 +129,7 @@ Le cinéma Pathé à Atlantis, dans la ville de Nantes. Tout d'abord on voit que
 				- (11) idClient, numReservation $\rightarrow$ idSeance \\
 				- (11) idClient, numReservation $\rightarrow$ nbPlaceStandardRes \\
 				- (11) idClient, numReservation $\rightarrow$ nbPlaceHandicapeRes \\
-				- (11) idClient, numReservation $\rightarrow$ nbPlaceDBox \\
+				- (11) idClient, numReservation $\rightarrow$ nbPlaceDBoxRes \\
 				- (12) idSeance, idCine $\rightarrow$ horaire \\
 				- (12) idSeance, idCine $\rightarrow$ dateProjection \\
 				- (12) idSeance, idCine $\rightarrow$ numSalle \\
@@ -172,7 +173,7 @@ Le cinéma Pathé à Atlantis, dans la ville de Nantes. Tout d'abord on voit que
 					role \\
 				$\rightarrow$ it's OK \\
 					
-				\noindent - (11) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBox, idSeance \\
+				\noindent - (11) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBoxRes, idSeance \\
 					\\
 					\underline{idClient+} \\
 					idClient / nomC / prenomC \\
@@ -211,7 +212,7 @@ Le cinéma Pathé à Atlantis, dans la ville de Nantes. Tout d'abord on voit que
 				- (7) idReal $\rightarrow$ nomR, prenomR \\
 				- (8) idAct $\rightarrow$ nomA, prenomA \\
 				- (9) idClient $\rightarrow$ nomC, prenomC \\
-				- (10) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBox, idSeance \\
+				- (10) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBoxRes, idSeance \\
 				- (11) idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D \\
 				
 				\noindent A présent, analysons chaque dfs une part une : \\
@@ -278,7 +279,7 @@ Le cinéma Pathé à Atlantis, dans la ville de Nantes. Tout d'abord on voit que
 					idClient \\									
 				$\rightarrow$ it's OK \\		
 
-				\noindent - (10) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBox, idSeance \\
+				\noindent - (10) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBoxRes, idSeance \\
 					\\
 					\underline{idClient+} \\
 					idClient \ nomC \ prenomC \\
