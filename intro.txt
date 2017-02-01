@@ -1,0 +1,27 @@
+Dans le cadre de ce projet nous devons créer une base de données.
+Nous avons décidés de modéliser la gestion de cinémas sur une grande échelle.
+Par exemple nous voulons savoir quels sont les cinémas de France, à qui ils appartiennent (Pathé,UGC, etc.) et ce qu'ils proposent.
+Comme notre modèle se base sur une certaine réalité voici comment nous avons décomposé la chose, prenons  l'exemple d'un cinéma :
+Le cinéma Pathé à Atlantis, dans la ville de Nantes.
+Tout d'abord on voit que un cinéma est identifié par une adresse et une ville.
+Ensuite, notre cinéma possède des salles dans lesquelles seront diffusés des films.
+Chaque film est composé d'une équipe d'acteurs, d'un réalisateur et d'une date de sortie. Il peut être compatible, ou non, à la 3D.
+Nos salle quant à elles, possèdent un certain nombre de places qui sont réparties entre les places "normales" et les places pour les handicapés ainsi que les nouveaux sièges dBox (sièges bougeant en même temps que le film). Si elles sont compatibles, elles ont la possibilité de diffuser en 3D.
+Lorsqu'un film est diffusé dans une salle on appelle ça une Séance, notre séance définit le tout c'est à dire "Tel film dans tel cinéma à telle heure".
+Aujourd'hui si on va au cinéma il est possible de réserver sa séance, autrement dit on réserve pour un film à une horaire précise dans un cinéma donné et le nombre de places que l'on réserve, ainsi que le type de places réservés. 
+
+
+Répartitions des tâches :
+
+Voici comment nous nous sommes organisés pour répartir les tâches.
+Tout d'abord après les premières semaines de cours nous nous sommes réunis pour décider ensemble d'un sujet. L'idée du cinéma est venue assez naturellement et nous paraissait plutôt bien coller à la réalité pour se pencher dessus.
+Ensuite nous avons définis tous les attributs de notre table ensemble, en réfléchissant tous ensemble "on veut faire quoi ? Comment on veut le faire ? Est-ce que un cinéma c'est vraiment comme ça ou pas ? Est-ce que ajouter cet attribut fait du sens ou non" etc. 
+Une fois nos attributs répartits nous avons chacun prit un cinéma (on en a 4) et chaque personne a remplit la partie du tableau qui correspondait à un cinéma.
+Une fois qu'on a fait ça on a regardé les tuples de notre tableur et on a relevé nos dépendances fonctionnelles comme suit :
+=>DFDFDDFDFDFDFDFDF
+
+Ensuite Demetre et Félix ont fait l'algorithme de décomposition et Loïc et Clément on fait l'algorithme de Bernstein.
+On a mit en commun le résultat des deux algorithmes afin de voir si on avait la même chose ou non, et pourquoi.
+
+
+Pour finir, nous avons testé la normalisation de notre schéma avec l'outil mit à notre disposition en question 5.
