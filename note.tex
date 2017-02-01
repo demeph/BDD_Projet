@@ -61,31 +61,11 @@
 		
 		\vspace{0.5cm}
 		
-	\section{Table contenant tous les attributs ainsi que quelques tuples}	
+	\section{Table de base}	
 		
 		\vspace{0.5cm}
 			
-		\begin{figure}[!h]		
-			\centerline{\includegraphics[height=9cm]{table_p1.png}}
-			\caption{Première partie de notre table contenant tous les attributs et quelques tuples}
-			\label{table_p1}	
-		\end{figure}			
-		
-		\vspace{0.5cm}			
-
-		\begin{figure}[!h]		
-			\centerline{\includegraphics[height=9cm]{table_p2.png}}
-			\caption{Deuxième partie de notre table contenant tous les attributs et quelques tuples}
-			\label{table_p2}	
-		\end{figure}			
-		
-		\vspace{0.5cm}
-
-		\begin{figure}[!h]		
-			\centerline{\includegraphics[height=9cm]{table_p3.png}}
-			\caption{Troisième partie de notre table contenant tous les attributs et quelques tuples}
-			\label{table_p3}	
-		\end{figure}			
+		Vous trouverez en annexe la tables \ref{table_p1} contenant tous nos attributs ainsi que tous nos tuples. Celle-ci est en trois partie à cause de sa taille conséquente.
 		
 		\vspace{0.5cm}						
 
@@ -110,26 +90,34 @@
 	
 		\vspace{0.5cm}
 
-		\noindent L'algo de Bernstein se fait en 4 parties : \\
-			- Caclculer la CV(DF) et les clés. Si R est en 3FN, on s'arrête. \\
-			- Partitionner CV(DF) e groupe DFi (1 <= i <= k) tels que toutes les df d'un même groupes aient la même partie gauche. \\
-			- Construire un schéma <Ri(Ui), DFi> pour chaque groupe DFi, où Ui est l'ensemble des attribut apparaissant dans DFi. \\
-			- Si aucun des schémas définis ne contient de clé X de R, rajouter un schéma <Rk+1(X), \{\}>. \\	
-
-		\subsection{Caclcul de CV(DF)}
+		\noindent L'algo de Bernstein se fait en 4 parties :
+	
+			\begin{enumerate}[label=\ding{228}]
+				\item Caclculer la CV(DF) et les clés. Si R est en 3FN, on s'arrête. 
+				\item Partitionner CV(DF) e groupe DFi (1 <= i <= k) tels que toutes les df d'un même groupes aient la même partie gauche. 
+				\item Construire un schéma <Ri(Ui), DFi> pour chaque groupe DFi, où Ui est l'ensemble des attribut apparaissant dans DFi.
+				\item Si aucun des schémas définis ne contient de clé X de R, rajouter un schéma <Rk+1(X), \{\}>.
+			\end{enumerate}	
+			
+		\subsection{Calcul de CV(DF)}
 
 			\vspace{0.5cm}
 
-			\noindent La couverture minimal se fait en trois parties : \\
-				- Toutes les dépendances doivent être élémentaire ; les décomposer si nécessaire. \\
-				- Eliminer les attributs superflus du coté gauche de la df. \\
-				- Eliminer les dfs redondantes.
+			\noindent La couverture minimal se fait en trois parties :
+
+			\begin{enumerate}[label=\ding{228}]
+				\item Toutes les dépendances doivent être élémentaire ; les décomposer si nécessaire.
+				\item Eliminer les attributs superflus du coté gauche de la df.
+				\item Eliminer les dfs redondantes.
+			\end{enumerate}	
 			
 			\vspace{0.5cm}
 				
-			\subsubsection{pas 1}
+			\subsubsection{Pas de 1}
 
 				\vspace{0.5cm}
+
+				\noindent On décompose chacune des dfs : \\
 
 				\noindent- (1) idCine $\rightarrow$ ville \\
 				- (1) idCine $\rightarrow$ adresse \\
@@ -166,10 +154,12 @@
 		
 				\vspace{0.5cm}
 									
-			\subsubsection{pas2}
+			\subsubsection{Pas de 2}
 
 				\vspace{0.5cm}
 	
+				On prend toutes les dfs qui ont plus d'un attribut à gauche et on calcul leur fermeture. On élimine l'autre attribut si l'attribut de droite de la df apparaît dans le résultat, ou si il apparaît dans le résultat de la fermeture. \\
+				
 				\noindent - (2) adresse, ville $\rightarrow$ franchise, nbsalle \\
 					\\
 					\underline{adresse+} \\
@@ -219,7 +209,7 @@
 
 				\vspace{0.5cm}
 
-			\subsubsection{pas3}		
+			\subsubsection{Pas de 3}		
 	
 				\vspace{0.5cm}
 	
@@ -229,7 +219,7 @@
 					- (2) adresse, ville $\rightarrow$ franchise, nbsalle \\
 					- (3) idCine $\rightarrow$ franchise, nbSalles \\
 					
-					Si l'on prend les dfs 1, 2 et 3, on remarque que l'on peut supprimer la 3 car on peut retrouver celle-ci par transitivité. Reprenons donc nos dfs restantes : \\
+				Si l'on prend les dfs 1, 2 et 3, on remarque que l'on peut supprimer la 3 car on peut retrouver celle-ci par transitivité. Reprenons donc nos dfs restantes : \\
 					
 				\noindent- (1) idCine $\rightarrow$ adresse, ville \\
 				- (2) adresse, ville $\rightarrow$ franchise, nbsalle \\
@@ -370,5 +360,53 @@
 			\section{Algo de décomposition}
 
 				\vspace{0.5cm}
+
+
+
+
+				\vspace{0.5cm}
+								
+			\section{Répartitions des tâches}
+
+				\vspace{0.5cm}
+
+				\noindent Voici comment nous nous sommes organisés pour répartir les tâches : \\
+				\indent Tout d'abord après les premières semaines de cours nous nous sommes réunis pour décider ensemble d'un sujet. L'idée du cinéma est venue assez naturellement et nous paraissait plutôt bien coller à la réalité pour se pencher dessus.\\
+				\indent Ensuite nous avons définis tous les attributs de notre table ensemble, en réfléchissant tous ensemble "on veut faire quoi ? Comment on veut le faire ? Est-ce que un cinéma c'est vraiment comme ça ou pas ? Est-ce que ajouter cet attribut fait du sens ou non" etc. Une fois nos attributs répartits nous avons chacun prit un cinéma (on en a 4) et chaque personne a remplit la partie du tableau qui correspondait à un cinéma. Une fois qu'on a fait ça on a regardé les tuples de notre tableur et on a relevé nos dépendances fonctionnelles.\\
+				\indent Ensuite Demetre et Félix ont fait l'algorithme de décomposition et Loïc et Clément on fait l'algorithme de Bernstein. On a mit en commun le résultat des deux algorithmes afin de voir si on avait la même chose ou non, et pourquoi. Pour finir, nous avons testé la normalisation de notre schéma avec l'outil mit à notre disposition en question 5.
+
+			\vspace{0.5cm}
+
+		\section{Conclusion}
+
+			\vspace{0.5cm}
+			
+			
+			
+
+			\newpage
+
+			\section{Annèxe}
+							
+				\begin{figure}[!h]		
+					\centering
+					\rotatebox{90}{\includegraphics[height=7cm]{picture/table_p1_rogne.png}}
+					\caption{Première partie de notre table contenant tous les attributs et quelques tuples}
+					\label{table_p1}	
+				\end{figure}			
+
+				\begin{figure}[!h]
+					\centering						
+					\rotatebox{90}{\includegraphics[height=9cm]{picture/table_p2_rogne.png}}
+					\caption{Deuxième partie de notre table contenant tous les attributs et quelques tuples}
+					\label{table_p2}	
+				\end{figure}			
+
+				\begin{figure}[!h]
+					\centering						
+					\rotatebox{90}{\includegraphics[height=9cm]{picture/table_p3_rogne.png}}
+					\caption{Troisième partie de notre table contenant tous les attributs et quelques tuples}
+					\label{table_p3}	
+				\end{figure}	
 	
 \end{document}
