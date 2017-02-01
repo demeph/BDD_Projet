@@ -315,7 +315,7 @@
 				\\		
 				\noindent Ainsi, hormis la suppression de dfs transitives, nos dfs ne changes pas. \\																
 				\\
-				On constate que l'on est bien en 1FN, ainsi qu'en 2FN. Cependant nous ne sommes pas en 3eme forme normal. En effet, avec les dfs ci-dessus, nous obtenons la clé suivante : \{idCine, idClient, numReservation, role\}. \\
+				On constate que l'on est bien en 1FN, ainsi qu'en 2FN. Cependant nous ne sommes pas en 3eme forme normal. En effet, avec les dfs ci-dessus et le graphe des dépendances en annexe \ref{graphe_dependances}, nous obtenons la clé suivante : \{idCine, idClient, numReservation, role\}. \\
 				Hors avec cette clé, nous avons des attributs non clés, qui déterminent d'autres attributs non clés. Par exemple, adresse et ville sont deux attributs non clé qui détermine franchise et nbSalle qui sont eux aussi non clés. \\
 				
 				\vspace{0.5cm}
@@ -345,7 +345,6 @@
 				R10 = \{idClient, numReservation, nbPlaceStandardRes, nbPlaceHandicapesRes, nbPlaceDBoxRes, idSeance\} \\ DF10 = \{idClient, numReservation $\rightarrow$  nbPlaceStandardRes, nbPlaceHandicapesRes, nbPlaceDBoxRes, idSeance\} \\
 				\\
 				R11 = \{idSeance, idCine, horaire, dateProjection, numSalle, idFilm, diffusionEn3D\} \\ DF11 = \{idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D\} \\
-				\\
 				
 				\vspace{0.5cm}
 								
@@ -408,5 +407,12 @@
 					\caption{Troisième partie de notre table contenant tous les attributs et quelques tuples}
 					\label{table_p3}	
 				\end{figure}	
-	
+
+				\begin{figure}[!h]
+					\centering						
+					\rotatebox{90}{\includegraphics[height=8cm]{picture/graphe_dependances.png}}
+					\caption{Graphes des dépendances}
+					\label{graphe_dependances}	
+				\end{figure}	
+					
 \end{document}
