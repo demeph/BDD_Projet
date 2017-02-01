@@ -323,7 +323,7 @@
 					\underline{idSeance+} \\
 					idSeance \\
 					\underline{idCine+}\\
-					idCine \\ adresse \ ville \\ franchise \ nbSalle \\							
+					idCine \ adresse \ ville \ franchise \ nbSalle \\							
 				$\rightarrow$ it's OK \\							
 				\\		
 				\noindent Ainsi, hormis la suppression de dfs transitives, nos dfs ne changes pas. \\																
@@ -375,13 +375,25 @@
 			
 			Nous avons pris tous nos attributs puis on a suivi l'algorithme de décomposition c'est à dire que en fonction de nos attributs et de nos dépendances fonctionnelles on a pris une dépendance, on a fait une relation en fonction de cette dépendance puis on a retiré nos attributs non clés au reste de la relation originale. Ensuite on a recommencé jusqu'à arriver à une partie qui ne contient que des clés et plus de df.\\
 			\indent On a commencé par les df qui n'avaient que un attribut à gauche puis on a finit par celles qui avaient plusieurs attributs à gauche.
+
+		\newpage
 		
+				\begin{figure}[!h]		
+					\centering
+					{\includegraphics[height=17cm]{picture/decomp1.png}}
+					\caption{Première partie de notre algorithme de décomposition}
+					\label{decomp1}	
+				\end{figure}	
 			
-
-
+				\begin{figure}[!h]		
+					\centering
+					{\includegraphics[height=8cm]{picture/decomp2.png}}
+					\caption{Deuxième partie de notre algorithme de décomposition}
+					\label{decomp2}	
+				\end{figure}		
 
 			\vspace{0.5cm}
-
+		
 		\section{Schéma de nos tables}
 		
 		Pour le diagramme nous nous sommes basés sur le résultat de l'algorithme de décomposition qui nous a fournit des tables équivalentes aux 11 relations R1..R11. Cependant nous avons fusionnés deux fois deux tables : la table R1 et R21 car ça nous paraît plus logique d'avoir pour chaque adresse, ville, franchise et nbsalles un seul idCine qui en fait détermine un unique cinéma.\\
@@ -392,10 +404,14 @@
 					\centering
 					{\includegraphics[height=11cm]{picture/DiagrammeUML.png}}
 					\caption{DiagrammeUML de nos tables}
-					\label{UML}	
+					\label{UML}
+					\vspace{0.5cm}	
 				\end{figure}		
 
-		\section{Conclusion}
+
+		\newpage
+
+		\section{Conclusion préliminaire}
 
 			\vspace{0.5cm}
 			
