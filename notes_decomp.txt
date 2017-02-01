@@ -1,0 +1,2 @@
+Nous avons pris tous nos attributs puis on a suivi l'algorithme de décomposition c'est à dire que en fonction de nos attributs et de nos dépendances fonctionnelles on a pris une dépendance, on a fait une relation en fonction de cette dépendance puis on a retiré nos attributs non clés au reste de la relation originale. Ensuite on a recommencé jusqu'à arriver à une partie qui ne contient que des clés et plus de df.
+On a commencé par les df qui n'avaient que un attribut à gauche puis on a finit par celles qui avaient plusieurs attributs à gauche.
