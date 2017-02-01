@@ -5,468 +5,295 @@
 \usepackage[utf8]{inputenc}
 
 \begin{document}
-
-	\vspace{0.5cm}
 	
-%	\section{Dependances fonctionelles}
-%	
-%		\noindent- $adresse, ville \rightarrow franchise, nbsalle$ \\
-%		- $adresse, ville, numSalle \rightarrow SallecompatibleEn3D, nbPlaceStandard,\\
-%		 nbPlaceHandicape,nbDbox$ \\
-%		- $nomFilm, dateSortie \rightarrow public, idPers AS idReal, duree, compatible3D$ \\
-%		- $nomfilm, dateSortie, role \rightarrow idPers AS idAct$ \\
-%		- $adresse, ville, horaire, dateProjection, numSalle \rightarrow nomFilm, dateSortie, diffusionen3D $ \\
-%		- $nomC, prenomC, numReservation \rightarrow nbPlaceStandardRes, nbPlaceHandicapeRes,\\
-%		 nbDboxRes, nomfilm, adresse, ville, salle, horaire$ \\
-%		- $horaire, nomfilm, adresse, ville \rightarrow  numsalle$ \\ 
-%		\\
-%		- $idCine \rightarrow adresse, ville$ \\
-%		- $idFilm \rightarrow nomFilm, dateSortie$ \\
-%		- $idPers \rightarrow nomP, prenomP$ \\
-%		- $idPers, idFilm \rightarrow role$ \\
-%		- $idCine \rightarrow nbSalles$ \\
-%		- $idClient \rightarrow nomC, prenomC$ \\
-%		- $idSeance \rightarrow adresse, ville, horaire, dateSortie, numSalle$ \\
-%		
-%		\vspace{0.5cm}
-%	
-%	\section{Algo de Bernstein}
-%	
-%		\subsection{pas de 1}
-%			
-%			\vspace{0.5cm}
-%			
-%			\noindent1ere DF :\\
-%			
-%			\noindent{adresse}+={adresse} \\
-%			{ville}+={ville} \\
-%			--> nécéssaire \\
-%			
-%			\vspace{0.5cm}
-%			
-%			\noindent2eme DF : \\
-%			
-%			\noindent{adresse}+={adresse} \\
-%			{ville}+={ville} \\
-%			{numSalle}+={numSalle} \\
-%			--> nécéssaire \\
-%			
-%			\vspace{0.5cm}
-%			
-%			\noindent3eme DF : \\
-%			
-%			\noindent{nomFilm}+={nomFilm} \\
-%			{dateSortie}+={dateSortie} \\
-%			--> nécéssaire \\
-%			
-%			\vspace{0.5cm}
-%			
-%			\noindent4eme DF : \\
-%			
-%			\noindent{nomFilm}+={nomFilm} \\
-%			{dateSortie}+={dateSortie} \\
-%			{role}+={role} \\
-%			--> nécéssaire \\
-%			
-%			\vspace{0.5cm}
-%			
-%			\noindent5eme DF : \\
-%			
-%			\noindent{adresse}+={adresse} \\
-%			{ville}+={ville} \\
-%			{horaire}+={horaire} \\
-%			{dateProjection}+={dateProjection} \\
-%			{numSalle}+={numSalle} \\
-%			--> nécéssaire \\
-%			
-%			\vspace{0.5cm}
-%			
-%			\noindent6eme DF : \\
-%			
-%			\noindent{nomClient}+={nomC} \\
-%			{prenomClient}+={prenomC} \\
-%			{numReservation}+={numReservation} \\
-%			--> nécéssaire \\
-%			
-%			\vspace{0.5cm}
-%			
-%			\noindent7eme DF : \\
-%			
-%			\noindent{horaire}+={horaire} \\
-%			{nomFilm}+={nomFilm} \\
-%			--> nécéssaire
-%			
-%			\vspace{0.5cm}
-%			
-%			\noindent8eme DF : \\
-%			
-%			\noindent{horaire}+={horaire} \\
-%			{idPers}+={idPers, nomP, prenomP} \\
-%			{idFilm}+={idFilm, nomFilm, dateSortie, public, idPers AS idReal, duree, compatible3D} \\
-%			
-%			\vspace{0.5cm}
-%		
-%		\subsection{pas de 2}
-%		
-%			pas d'attributs superflus à gauche
-%			
-%			\vspace{0.5cm}
-%		
-%		\subsection{pas de 3}
-%			
-%			\vspace{0.5cm}
-%			
-%			\underline{adresse, ville} $+$ \\
-%			1- franchise, nbSalles\\
-%			
-%			\vspace{0.5cm}
-%			
-%			\underline{adresse, ville, numSalle} $+$ \\
-%			1- franchise, nbSalles, salleCompatible3D, nbPlaceHandicape, nbPlaceStandard, nbDbox\\
-%			
-%			\vspace{0.5cm}
-%			
-%			\underline{nomFilm, dateSortie} $+$ \\
-%			1- public, idPers, duree, compatible3D\\
-%			2- nomP, prenomP\\
-%			
-%			\vspace{0.5cm}
-%			
-%			\underline{nomFilm, dateSortie, role} $+$ \\
-%			1- public, idPers, duree, compatible3D\\
-%			2- nomP, prenomP\\
-%			
-%			\vspace{0.5cm}
-%			
-%			\underline{adresse, ville, horaire, datePojection, numSalle} $+$ \\
-%			1- franchise, nbSalles, salleCompatible3D, nbPlaceHandicape, nbPlaceStandard, nbDbox, nomFilm, dateSortie, diffusionEn3D\\
-%			2- public, idPers, duree, compatible3D\\
-%			3- nomP, prenomP\\
-%			
-%			\vspace{0.5cm}
-%			
-%			\underline{nomC, prenomC, numReservation} $+$ \\
-%			1- addresse, ville, horaire, dateProjection, numSalle, nbPlaceHandicape, nbPlaceStandard, nbDbox\\
-%			2- franchise, nbSalle, nomFilm, dateSortie, difusionEn3D\\
-%			3- public, idPers, duree, compatible3D\\
-%			4- nomP, prenomP\\
-%				
-%			\vspace{0.5cm}
-%			
-%			\underline{horaire, nomFilm, adresse, ville} $+$ \\
-%			1- franchise, numSalle, nbSalle\\
+	\section{Introduction}
+		
+		\vspace{0.5cm}
+		
 			
-			\section{Dépendance fonctionnelle}
+		
+		\vspace{0.5cm}
+				
+	\section{Dépendance fonctionnelle}
+	
+		\vspace{0.5cm}
+	
+		\noindent- (1) idCine $\rightarrow$ adresse, ville \\
+		- (2) adresse, ville $\rightarrow$ franchise, nbsalle \\
+		- (3) idCine $\rightarrow$ franchise, nbSalles \\
+		- (4) idCine, numSalle $\rightarrow$ SallecompatibleEn3D, nbPlaceStandard, nbPlaceHandicape,nbDbox \\
+ 		- (5) idFilm $\rightarrow$ nomFilm, dateSortie \\
+		- (6) nomFilm, dateSortie $\rightarrow$ public, idReal, duree, compatible3D \\
+		- (7) idFilm, role $\rightarrow$  idAct \\
+		- (8) idReal $\rightarrow$ nomR, prenomR \\
+		- (9) idAct $\rightarrow$ nomA, prenomA \\
+		- (10) idClient $\rightarrow$ nomC, prenomC \\
+		- (11) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBox, idSeance \\
+		- (12) idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D \\
+		
+	\section{Algo de Bernstein}
+	
+		\vspace{0.5cm}
+
+		\noindent L'algo de Bernstein se fait en 4 parties : \\
+			- Caclculer la CV(DF) et les clés. Si R est en 3FN, on s'arrête. \\
+			- Partitionner CV(DF) e groupe DFi (1 <= i <= k) tels que toutes les df d'un même groupes aient la même partie gauche. \\
+			- Construire un schéma <Ri(Ui), DFi> pour chaque groupe DFi, où Ui est l'ensemble des attribut apparaissant dans DFi. \\
+			- Si aucun des schémas définis ne contient de clé X de R, rajouter un schéma <Rk+1(X), \{\}>. \\	
+
+		\subsection{Caclcul de CV(DF)}
+
+			\vspace{0.5cm}
+
+			\noindent La couverture minimal se fait en trois parties : \\
+				- Toutes les dépendances doivent être élémentaire ; les décomposer si nécessaire. \\
+				- Eliminer les attributs superflus du coté gauche de la df. \\
+				- Eliminer les dfs redondantes.
 			
+			\vspace{0.5cm}
+				
+			\subsubsection{pas 1}
+
+				\vspace{0.5cm}
+
+				\noindent- (1) idCine $\rightarrow$ ville \\
+				- (1) idCine $\rightarrow$ adresse \\
+				- (2) adresse, ville $\rightarrow$ franchise \\
+				- (2) adresse, ville $\rightarrow$ nbsalle \\
+				- (3) idCine $\rightarrow$ franchise \\
+				- (3) idCine $\rightarrow$ nbSalles \\
+				- (4) idCine, numSalle $\rightarrow$ SallecompatibleEn3D \\
+		 		- (4) idCine, numSalle $\rightarrow$ nbPlaceStandard \\
+		 		- (4) idCine, numSalle $\rightarrow$ nbPlaceHandicape \\
+		 		- (4) idCine, numSalle $\rightarrow$ nbDbox \\
+		 		- (5) idFilm $\rightarrow$ nomFilm \\
+		 		- (5) idFilm $\rightarrow$ dateSortie \\				 		
+				- (6) nomFilm, dateSortie $\rightarrow$ public \\
+				- (6) nomFilm, dateSortie $\rightarrow$ idReal \\
+				- (6) nomFilm, dateSortie $\rightarrow$ duree \\
+				- (6) nomFilm, dateSortie $\rightarrow$ compatible3D \\
+				- (7)idFilm, role $\rightarrow idAct$ \\
+				- (8) idReal $\rightarrow$ nomR \\
+				- (8) idReal $\rightarrow$ prenomR \\						
+				- (9) idAct $\rightarrow$ nomA \\
+				- (9) idAct $\rightarrow$ prenomA \\						
+				- (10) idClient $\rightarrow$ nomC \\
+				- (10) idClient $\rightarrow$ prenomC \\						
+				- (11) idClient, numReservation $\rightarrow$ idSeance \\
+				- (11) idClient, numReservation $\rightarrow$ nbPlaceStandardRes \\
+				- (11) idClient, numReservation $\rightarrow$ nbPlaceHandicapeRes \\
+				- (11) idClient, numReservation $\rightarrow$ nbPlaceDBox \\
+				- (12) idSeance, idCine $\rightarrow$ horaire \\
+				- (12) idSeance, idCine $\rightarrow$ dateProjection \\
+				- (12) idSeance, idCine $\rightarrow$ numSalle \\
+				- (12) idSeance, idCine $\rightarrow$ idFilm \\
+				- (12) idSeance  idCine $\rightarrow$ diffusionEn3D \\
+		
+				\vspace{0.5cm}
+									
+			\subsubsection{pas2}
+
+				\vspace{0.5cm}
+	
+				\noindent - (2) adresse, ville $\rightarrow$ franchise, nbsalle \\
+					\\
+					\underline{adresse+} \\
+					adresse \\
+					\underline{ville+} \\
+					ville \\
+				$\rightarrow$ it's OK \\
+
+				\noindent - (4) idCine, numSalle $\rightarrow$ SallecompatibleEn3D, nbPlaceStandard, nbPlaceHandicape,nbDbox \\
+					\\
+					\underline{idCine+} \\
+					idCine / adresse / ville /franchise / nbSalle \\
+					\underline{numSalle+} \\
+					numSalle \\
+				$\rightarrow$ it's OK \\
+				
+				\noindent - (6) nomFilm, dateSortie $\rightarrow$ public, idReal, duree, compatible3D \\																						\\
+					\underline{nomFilm+} \\
+					nomFilm \\
+					\underline{dateSotie+} \\
+					dateSortie \\
+				$\rightarrow$ it's OK \\
+			
+				\noindent - (7) idFilm, role $\rightarrow$  idAct \\
+					\\
+					\underline{idFilm+} \\
+					idFilm / nomFilm / dateSortie / public / idReal / duree / compatible3D / nomA / prenomA \\
+					\underline{role+} \\
+					role \\
+				$\rightarrow$ it's OK \\
+					
+				\noindent - (11) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBox, idSeance \\
+					\\
+					\underline{idClient+} \\
+					idClient / nomC / prenomC \\
+					\underline{numReservation+} \\
+					numReservation \\	
+				$\rightarrow$ it's OK \\					
+				
+				\noindent - (12) idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D \\												
+					\\
+					\underline{idSeance+}
+					idSeance \\
+					\underline{idCine+}
+					adresse / ville / franchise / nbSalle \\
+				$\rightarrow$ it's OK \\
+
+				\vspace{0.5cm}
+
+			\subsubsection{pas3}		
+	
+				\vspace{0.5cm}
+	
+				\noindent Eliminons tout d'abord les dfs qui sont préservées par transitivité : \\
+	
+					\noindent- (1) idCine $\rightarrow$ adresse, ville \\
+					- (2) adresse, ville $\rightarrow$ franchise, nbsalle \\
+					- (3) idCine $\rightarrow$ franchise, nbSalles \\
+					
+					Si l'on prend les dfs 1, 2 et 3, on remarque que l'on peut supprimer la 3 car on peut retrouver celle-ci par transitivité. Reprenons donc nos dfs restantes : \\
+					
 				\noindent- (1) idCine $\rightarrow$ adresse, ville \\
 				- (2) adresse, ville $\rightarrow$ franchise, nbsalle \\
-				- (3) idCine $\rightarrow$ franchise, nbSalles \\
-				- (4) idCine, numSalle $\rightarrow$ SallecompatibleEn3D, nbPlaceStandard, nbPlaceHandicape,nbDbox \\
-		 		- (5) idFilm $\rightarrow$ nomFilm, dateSortie \\
-				- (6) nomFilm, dateSortie $\rightarrow$ public, idReal, duree, compatible3D \\
-				- (7) idFilm, role $\rightarrow$  idAct \\
-				- (8) idReal $\rightarrow$ nomR, prenomR \\
-				- (9) idAct $\rightarrow$ nomA, prenomA \\
-				- (10) idClient $\rightarrow$ nomC, prenomC \\
-				- (11) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBox, idSeance \\
-				- (12) idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D \\
+				- (3) idCine, numSalle $\rightarrow$ SallecompatibleEn3D, nbPlaceStandard, nbPlaceHandicape,nbDbox \\
+		 		- (4) idFilm $\rightarrow$ nomFilm, dateSortie \\
+				- (5) nomFilm, dateSortie $\rightarrow$ public, idReal, duree, compatible3D \\
+				- (6) idFilm, role $\rightarrow$  idAct \\
+				- (7) idReal $\rightarrow$ nomR, prenomR \\
+				- (8) idAct $\rightarrow$ nomA, prenomA \\
+				- (9) idClient $\rightarrow$ nomC, prenomC \\
+				- (10) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBox, idSeance \\
+				- (11) idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D \\
 				
-			\section{Algo de Bernstein}
+				\noindent A présent, analysons chaque dfs une part une : \\
+				
+				\noindent - (1) idCine $\rightarrow$ adresse, ville \\
+					\\
+					\underline{idCine+} \\
+					idCine\\									
+				$\rightarrow$ it's OK \\		
+					
+				\noindent - (2) adresse, ville $\rightarrow$ franchise, nbsalle \\
+					\\
+					\underline{adresse+} \\
+					adresse\\
+					\underline{ville+} \\
+					ville \\									
+				$\rightarrow$ it's OK \\
+				
+				\noindent - (3) idCine, numSalle $\rightarrow$ SallecompatibleEn3D, nbPlaceStandard, nbPlaceHandicape,nbDbox \\
+					\\
+					\underline{idCine+} \\
+					idCIne / adresse / ville / franchise / nbSalle\\
+					\underline{numSalle+} \\
+					numSalle \\								
+				$\rightarrow$ it's OK \\													
+
+				\noindent - (4) idFilm $\rightarrow$ nomFilm, dateSortie \\
+					\\
+					\underline{idFilm+} \\
+					idFilm\\								
+				$\rightarrow$ it's OK \\	
+				
+				\noindent - (5) nomFilm, dateSortie $\rightarrow$ public, idReal, duree, compatible3D \\
+					\\
+					\underline{nomFilm+} \\
+					nomFilm \\
+					\underline{dateSortie+} \\
+					dateSortie \\									
+				$\rightarrow$ it's OK \\	
+				
+				\noindent - (6) idFilm, role $\rightarrow$  idAct  \\
+					\\
+					\underline{idFilm+} \\
+					idFilm / nomFilm / dateSortie / public / idReal / duree / compatible3D / nomR / prenomR \\
+					\underline{role+} \\
+					role \\									
+				$\rightarrow$ it's OK \\																				
 	
-				L'algo de Bernstein se fait en 4 parties : \\
-					- Caclculer la CV(DF) et les clés. Si R est en 3FN, on s'arrête. \\
-					- Partitionner CV(DF) e groupe DFi (1 <= i <= k) tels que toutes les df d'un même groupes aient la même partie gauche. \\
-					- Construire un schéma <Ri(Ui), DFi> pour chaque groupe DFi, où Ui est l'ensemble des attribut apparaissant dans DFi. \\
-					- Si aucun des schémas définis ne contient de clé X de R, rajouter un schéma <Rk+1(X), \{\}>. \\	
+				\noindent - (7) idReal $\rightarrow$ nomP, prenomP \\
+					\\
+					\underline{idReal+} \\
+					idReal \\								
+				$\rightarrow$ it's OK \\	
+				
+				\noindent - (8) idAct $\rightarrow$ nomP, prenomP \\
+					\\
+					\underline{idAct+} \\
+					idAct \\									
+				$\rightarrow$ it's OK \\	
+
+				\noindent - (9) idClient $\rightarrow$ nomC, prenomC \\
+					\\
+					\underline{idClient+} \\
+					idClient \\									
+				$\rightarrow$ it's OK \\		
+
+				\noindent - (10) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBox, idSeance \\
+					\\
+					\underline{idClient+} \\
+					idClient \ nomC \ prenomC \\
+					\underline{numReservation+}
+					numReservation \\									
+				$\rightarrow$ it's OK \\		
+
+				\noindent - (11) idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D \\
+					\\
+					\underline{idSeance+} \\
+					idSeance \\
+					\underline{idCine+}\\
+					idCine \\ adresse \ ville \\ franchise \ nbSalle \\							
+				$\rightarrow$ it's OK \\							
+				\\		
+				\noindent Ainsi, hormis la suppression de dfs transitives, nos dfs ne changes pas. \\																
+				\\
+				On constate que l'on est bien en 1FN, ainsi qu'en 2FN. Cependant nous ne sommes pas en 3eme forme normal. En effet, avec les dfs ci-dessus, nous obtenons la clé suivante : \{idCine, idClient, numReservation, role\}. \\
+				Hors avec cette clé, nous avons des attributs non clés, qui déterminent d'autres attributs non clés. Par exemple, adresse et ville sont deux attributs non clé qui détermine franchise et nbSalle qui sont eux aussi non clés. \\
+				
+				\vspace{0.5cm}
+													
+			\subsection{Partitionnement de la CV et construction des schémas} 	
+			
+				\vspace{0.5cm}
+			
+				\noindent R1 = \{idCine, adresse, ville\} \\  DF1 = \{idCine $\rightarrow$ adresse, ville\} \\
+				\\
+				R2 = \{idCine, franchise, nbSalle\} \\ DF2 = \{adresse, ville $\rightarrow$ franchise, nbSalle\} \\
+				\\
+				R3 = \{idCine, numSalle, salleCompatibleEn3D, nbPlaceStanard, nbPlaceHandicapes, nbDbox\} \\ DF3 = \{idCine, numSalle, $\rightarrow$ salleCompatibleEn3D, nbPlaceStanard, nbPlaceHandicapes, nbDbox\} \\
+				\\
+				R4 = \{idFilm, nomFilm, dateSortie\} \\ DF4 = \{idFilm $\rightarrow$ nomFilm, dateSortie\} \\
+				\\
+				R5 = \{idFilm\} \\ DF5 = \{nomFilm, dateSortie $\rightarrow$ public, idReal, duree, compatible3D\} \\	
+				\\							
+				R6 = \{idFilm, role, idAct\} \\ DF6 = \{idFilm, role $\rightarrow$  idAct\} \\
+				\\
+				R7 = \{idReal, nomR, prenomR\} \\ DF7 = \{idReal $\rightarrow$ nomR, prenomR\} \\
+				\\
+				R8 = \{idAct, nomA, prenomA\} \\ DF8 = \{idAct $\rightarrow$ nomA, prenomA\} \\
+				\\
+				R9 = \{idClient, nomC, prenomC\} \\ DF9 = \{idClient $\rightarrow$ nomC, prenomC\} \\ 
+				\\
+				R10 = \{idClient, numReservation, nbPlaceStandardRes, nbPlaceHandicapesRes, nbPlaceDBoxRes, idSeance\} \\ DF10 = \{idClient, numReservation $\rightarrow$  nbPlaceStandardRes, nbPlaceHandicapesRes, nbPlaceDBoxRes, idSeance\} \\
+				\\
+				R11 = \{idSeance, idCine, horaire, dateProjection, numSalle, idFilm, diffusionEn3D\} \\ DF11 = \{idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D\} \\
+				\\
+				
+				\vspace{0.5cm}
+								
+			\subsection{Ajout d'un schéma} 	
+
+				\vspace{0.5cm}
+											
+				R12 = \{idCine, idClient, numReservation, role\} \\ DF12 = \{\} \\
+
+				\vspace{0.5cm}
+
+			\section{Algo de décomposition}
+
+				\vspace{0.5cm}
 	
-				\subsection{Caclcul de CV(DF)}
-		
-					La couverture minimal se fait en trois parties : \\
-						- Toutes les dépendances doivent être élémentaire ; les décomposer si nécessaire. \\
-						- Eliminer les attributs superflus du coté gauche de la df. \\
-						- Eliminer les dfs redondantes.
-					
-					\subsubsection{pas 1}
-		
-						\noindent- (1) idCine $\rightarrow$ ville \\
-						- (1) idCine $\rightarrow$ adresse \\
-						- (2) adresse, ville $\rightarrow$ franchise \\
-						- (2) adresse, ville $\rightarrow$ nbsalle \\
-						- (3) idCine $\rightarrow$ franchise \\
-						- (3) idCine $\rightarrow$ nbSalles \\
-						- (4) idCine, numSalle $\rightarrow$ SallecompatibleEn3D \\
-				 		- (4) idCine, numSalle $\rightarrow$ nbPlaceStandard \\
-				 		- (4) idCine, numSalle $\rightarrow$ nbPlaceHandicape \\
-				 		- (4) idCine, numSalle $\rightarrow$ nbDbox \\
-				 		- (5) idFilm $\rightarrow$ nomFilm \\
-				 		- (5) idFilm $\rightarrow$ dateSortie \\				 		
-						- (6) nomFilm, dateSortie $\rightarrow$ public \\
-						- (6) nomFilm, dateSortie $\rightarrow$ idReal \\
-						- (6) nomFilm, dateSortie $\rightarrow$ duree \\
-						- (6) nomFilm, dateSortie $\rightarrow$ compatible3D \\
-						- (7)idFilm, role $\rightarrow idAct$ \\
-						- (8) idReal $\rightarrow$ nomR \\
-						- (8) idReal $\rightarrow$ prenomR \\						
-						- (9) idAct $\rightarrow$ nomA \\
-						- (9) idAct $\rightarrow$ prenomA \\						
-						- (10) idClient $\rightarrow$ nomC \\
-						- (10) idClient $\rightarrow$ prenomC \\						
-						- (11) idClient, numReservation $\rightarrow$ idSeance \\
-						- (11) idClient, numReservation $\rightarrow$ nbPlaceStandardRes \\
-						- (11) idClient, numReservation $\rightarrow$ nbPlaceHandicapeRes \\
-						- (11) idClient, numReservation $\rightarrow$ nbPlaceDBox \\
-						- (12) idSeance, idCine $\rightarrow$ horaire \\
-						- (12) idSeance, idCine $\rightarrow$ dateProjection \\
-						- (12) idSeance, idCine $\rightarrow$ numSalle \\
-						- (12) idSeance, idCine $\rightarrow$ idFilm \\
-						- (12) idSeance  idCine $\rightarrow$ diffusionEn3D \\
-										
-					\subsubsection{pas2}
-		
-						\noindent - (2) adresse, ville $\rightarrow$ franchise, nbsalle \\
-							\\
-							\underline{adresse+} \\
-							adresse \\
-							\underline{ville+} \\
-							ville \\
-							\\
-						$\rightarrow$ it's OK \\
-		
-						\noindent - (4) idCine, numSalle $\rightarrow$ SallecompatibleEn3D, nbPlaceStandard, nbPlaceHandicape,nbDbox \\
-							\\
-							\underline{idCine+} \\
-							idCine \\
-							adresse \\
-							ville \\
-							franchise \\
-							nbSalle \\
-							\underline{numSalle+} \\
-							numSalle \\
-							\\
-						$\rightarrow$ it's OK \\
-						
-						\noindent - (6) nomFilm, dateSortie $\rightarrow$ public, idReal, duree, compatible3D \\																						\\
-							\underline{nomFilm+} \\
-							nomFilm \\
-							\underline{dateSotie+} \\
-							dateSortie \\
-							\\
-						$\rightarrow$ it's OK \\
-					
-						\noindent - (7) idFilm, role $\rightarrow$  idAct \\
-							\\
-							\underline{idFilm+} \\
-							idFilm \\
-							nomFilm \\
-							dateSortie \\
-							public \\
-							idReal \\
-							duree \\
-							compatible3D \\
-							nomA \\
-							prenomA \\
-							\underline{role+} \\
-							role \\
-							\\
-						$\rightarrow$ it's OK \\
-							
-						\noindent - (11) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBox, idSeance \\
-							\\
-							\underline{idClient+} \\
-							idClient \\
-							nomC \\
-							prenomC \\
-							\underline{numReservation+} \\
-							numReservation \\	
-							\\									
-						$\rightarrow$ it's OK \\					
-						
-						\noindent - (12) idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D \\												
-						\\
-						\underline{idSeance+}
-						idSeance \\
-						\underline{idCine+}
-						adresse \\
-						ville \\
-						franchise \\
-						nbSalle \\
-						\\
-						$\rightarrow$ it's OK \\
-		
-					\subsubsection{pas3}		
-			
-						Eliminons tout d'abord les dfs qui sont préservées par transitivité : \\
-			
-							\noindent- (1) idCine $\rightarrow$ adresse, ville \\
-							- (2) adresse, ville $\rightarrow$ franchise, nbsalle \\
-							- (3) idCine $\rightarrow$ franchise, nbSalles \\
-							
-							Si l'on prend les dfs 1, 2 et 3, on remarque que l'on peut supprimer la 3 car on peut retrouver celle-ci par transitivité. \\
-							Reprenons donc nos dfs restantes : \\
-							
-						\noindent- (1) idCine $\rightarrow$ adresse, ville \\
-						- (2) adresse, ville $\rightarrow$ franchise, nbsalle \\
-						- (3) idCine, numSalle $\rightarrow$ SallecompatibleEn3D, nbPlaceStandard, nbPlaceHandicape,nbDbox \\
-				 		- (4) idFilm $\rightarrow$ nomFilm, dateSortie \\
-						- (5) nomFilm, dateSortie $\rightarrow$ public, idReal, duree, compatible3D \\
-						- (6) idFilm, role $\rightarrow$  idAct \\
-						- (7) idReal $\rightarrow$ nomR, prenomR \\
-						- (8) idAct $\rightarrow$ nomA, prenomA \\
-						- (9) idClient $\rightarrow$ nomC, prenomC \\
-						- (10) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBox, idSeance \\
-						- (11) idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D \\
-						
-						A présent, analysons chaque dfs une part une : \\
-						
-						\noindent - (1) idCine $\rightarrow$ adresse, ville \\
-							\\
-							\underline{idCine+} \\
-							idCine\\
-							\\									
-						$\rightarrow$ it's OK \\		
-							
-						\noindent - (2) adresse, ville $\rightarrow$ franchise, nbsalle \\
-							\\
-							\underline{adresse+} \\
-							adresse\\
-							\underline{ville+} \\
-							ville \\	
-							\\									
-						$\rightarrow$ it's OK \\
-						
-						\noindent - (3) idCine, numSalle $\rightarrow$ SallecompatibleEn3D, nbPlaceStandard, nbPlaceHandicape,nbDbox \\
-							\\
-							\underline{idCine+} \\
-							idCIne\\
-							adresse\\
-							ville\\
-							franchise\\
-							nbSalle\\
-							\underline{numSalle+} \\
-							numSalle \\	
-							\\									
-						$\rightarrow$ it's OK \\													
-
-						\noindent - (4) idFilm $\rightarrow$ nomFilm, dateSortie \\
-							\\
-							\underline{idFilm+} \\
-							idFilm\\	
-							\\									
-						$\rightarrow$ it's OK \\	
-						
-						\noindent - (5) nomFilm, dateSortie $\rightarrow$ public, idReal, duree, compatible3D \\
-							\\
-							\underline{nomFilm+} \\
-							nomFilm \\
-							\underline{dateSortie+} \\
-							dateSortie \\	
-							\\									
-						$\rightarrow$ it's OK \\	
-						
-						\noindent - (6) idFilm, role $\rightarrow$  idAct  \\
-							\\
-							\underline{idFilm+} \\
-							idFilm \\
-							nomFilm \\
-							dateSortie \\
-							public \\
-							idReal \\
-							duree \\
-							compatible3D \\
-							nomR \\
-							prenomR \\
-							\underline{role+} \\
-							role \\	
-							\\									
-						$\rightarrow$ it's OK \\																				
-			
-						\noindent - (7) idReal $\rightarrow$ nomP, prenomP \\
-							\\
-							\underline{idReal+} \\
-							idReal \\
-							\\									
-						$\rightarrow$ it's OK \\	
-						
-						\noindent - (8) idAct $\rightarrow$ nomP, prenomP \\
-							\\
-							\underline{idAct+} \\
-							idAct \\	
-							\\									
-						$\rightarrow$ it's OK \\	
-
-						\noindent - (9) idClient $\rightarrow$ nomC, prenomC \\
-							\\
-							\underline{idClient+} \\
-							idClient \\	
-							\\									
-						$\rightarrow$ it's OK \\		
-
-						\noindent - (10) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBox, idSeance \\
-							\\
-							\underline{idClient+} \\
-							idClient \\
-							nomC \\
-							prenomC \\
-							\underline{numReservation+}
-							numReservation \\	
-							\\									
-						$\rightarrow$ it's OK \\		
-
-						\noindent - (11) idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D \\
-							\\
-							\underline{idSeance+} \\
-							idSeance \\
-							\\		
-							\underline{idCine+}\\
-							idCine \\
-							adresse \\
-							ville \\
-							franchise \\
-							nbSalle \\							
-						$\rightarrow$ it's OK \\							
-						\\		
-						Ainsi, mettons à jours nos dfs : \\																
-						
-						\noindent- (1) idCine $\rightarrow$ adresse, ville \\
-						- (2) adresse, ville $\rightarrow$ franchise, nbsalle \\
-						- (3) idCine, numSalle $\rightarrow$ SallecompatibleEn3D, nbPlaceStandard, nbPlaceHandicape,nbDbox \\
-				 		- (4) idFilm $\rightarrow$ nomFilm, dateSortie \\
-						- (5) nomFilm, dateSortie $\rightarrow$ public, idReal, duree, compatible3D \\
-						- (6) idFilm, role $\rightarrow$  idAct \\
-						- (7) idReal $\rightarrow$ nomR, prenomR \\
-						- (8) idAct $\rightarrow$ nomA, prenomA \\
-						- (9) idClient $\rightarrow$ nomC, prenomC \\
-						- (10) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBox, idSeance \\
-						- (11) idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D \\
-															
-						On constate que l'on est bien en 1FN, ainsi qu'en 2FN. Cependant nous ne sommes pas en 3eme forme normal. En effet, avec les dfs ci-dessus, nous obtenons la clé suivante : \{idCine, idClient, numReservation, role\}. \\
-						Hors avec cette clé, nous avons des attributs non clés, qui déterminent d'autres attributs non clés. Par exemple, adresse et ville sont deux attributs non clé qui détermine franchise et nbSalle qui sont eux aussi non clés. \\
-															
-					\subsection{Partition de la CV et construction des schémas} 	
-					
-						\noindent R1 = \{idCine, adresse, ville\} \\  DF1 = \{idCine $\rightarrow$ adresse, ville\} \\
-						\\
-						R2 = \{idCine, franchise, nbSalle\} \\ DF2 = \{adresse, ville $\rightarrow$ franchise, nbSalle\} \\
-						\\
-						R3 = \{idCine, numSalle, salleCompatibleEn3D, nbPlaceStanard, nbPlaceHandicapes, nbDbox\} \\ DF3 = \{idCine, numSalle, $\rightarrow$ salleCompatibleEn3D, nbPlaceStanard, nbPlaceHandicapes, nbDbox\} \\S
-						\\
-						R4 = \{idFilm, nomFilm, dateSortie\} \\ DF4 = \{idFilm $\rightarrow$ nomFilm, dateSortie\} \\
-						\\
-						R5 = \{idFilm\} \\ DF5 = \{nomFilm, dateSortie $\rightarrow$ public, idReal, duree, compatible3D\} \\	
-						\\							
-						R6 = \{idFilm, role, idAct\} \\ DF6 = \{idFilm, role $\rightarrow$  idAct\} \\
-						\\
-						R7 = \{idReal, nomR, prenomR\} \\ DF7 = \{idReal $\rightarrow$ nomR, prenomR\} \\
-						\\
-						R8 = \{idAct, nomA, prenomA\} \\ DF8 = \{idAct $\rightarrow$ nomA, prenomA\} \\
-						\\
-						R9 = \{idClient, nomC, prenomC\} \\ DF9 = \{idClient $\rightarrow$ nomC, prenomC\} \\ 
-						\\
-						R10 = \{idClient, numReservation, nbPlaceStandardRes, nbPlaceHandicapesRes, nbPlaceDBoxRes, idSeance\} \\ DF10 = \{idClient, numReservation $\rightarrow$  nbPlaceStandardRes, nbPlaceHandicapesRes, nbPlaceDBoxRes, idSeance\} \\
-						\\
-						R11 = \{idSeance, idCine, horaire, dateProjection, numSalle, idFilm, diffusionEn3D\} \\ DF11 = \{idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D\} \\
-						\\
-						R12 = \{idCine, idClient, numReservation, role\} \\ DF12 = \{\} \\
-
-
 \end{document}
