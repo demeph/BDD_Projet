@@ -1,7 +1,7 @@
 R(idCine,franchise,nbSalles,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox,idAct,nomA,prenomA,idFilm,nomFilm,dateSortie,role,public,duree,compatible3D,horaire,idSeance,dateProjection,diffusion3D,idClient,nomC,prenomC,numReservation,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes,idReal,nomR,prenomR, adresse, ville) -->
 
 R1 = {adresse,ville, franchise, nbsalles}~retour_ligne~
-DF1 = {(2)} #
+DF1 = {2} #
 
 R2(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox,idAct,nomA,prenomA,idFilm,nomFilm,dateSortie,role,public,duree,compatible3D,horaire,idSeance,dateProjection,diffusion3D,idClient,nomC,prenomC,numReservation,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes,idReal,nomR,prenomR, adresse, ville) ;
 
@@ -12,7 +12,7 @@ R2(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlace
 R2(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox,idAct,nomA,prenomA,idFilm,nomFilm,dateSortie,role,public,duree,compatible3D,horaire,idSeance,dateProjection,diffusion3D,idClient,nomC,prenomC,numReservation,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes,idReal,nomR,prenomR, adresse, ville) -->
 
 R21= {idCine, adresse, ville}~retour_ligne~
-DF21 = {(1)} #
+DF21 = {1} #
 
 R22(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox,idAct,nomA,prenomA,idFilm,nomFilm,dateSortie,role,public,duree,compatible3D,horaire,idSeance,dateProjection,diffusion3D,idClient,nomC,prenomC,numReservation,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes,idReal,nomR,prenomR);
 
@@ -23,7 +23,7 @@ R22(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlac
 R22(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox,idAct,nomA,prenomA,idFilm,nomFilm,dateSortie,role,public,duree,compatible3D,horaire,idSeance,dateProjection,diffusion3D,idClient,nomC,prenomC,numReservation,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes,idReal,nomR,prenomR) -->
 
 R31 = {idReal, nomR,prenomR}~retour_ligne~
-DF31 = { 8} #
+DF31 = {8} #
 
 R32(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox,idAct, nomA, prenomAidFilm,nomFilm,dateSortie,role,public,duree,compatible3D,horaire,idSeance,dateProjection,diffusion3D,idClient,nomC,prenomC,numReservation,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes,idReal);
 
@@ -32,7 +32,7 @@ R32(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlac
 R32(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox,idAct, nomA, prenomAidFilm,nomFilm,dateSortie,role,public,duree,compatible3D,horaire,idSeance,dateProjection,diffusion3D,idClient,nomC,prenomC,numReservation,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes,idReal) -->
 
 R41 = {idAct, nomA,prenomA}~retour_ligne~
-DF41 = { 9 } #
+DF41 = {9} #
 
 R42(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox,IdAct,idFilm,nomFilm,dateSortie,role,public,duree,compatible3D,horaire,idSeance,dateProjection,diffusion3D,idClient,nomC,prenomC,numReservation,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes,idReal, idAct );
 
@@ -42,7 +42,7 @@ R42(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlac
 R42(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox,IdAct,idFilm,nomFilm,dateSortie,role,public,duree,compatible3D,horaire,idSeance,dateProjection,diffusion3D,idClient,nomC,prenomC,numReservation,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes,idReal, idAct ) -->
 
 R51 ={nomFilm,dateSortie,public,compatible3D,idReal,duree}~retour_ligne~
-DF51 = { 6 } #
+DF51 = {6} #
 
 R52(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox,idAct,idFilm,nomFilm,dateSortie,role,horaire,idSeance,dateProjection,diffusion3D,idClient,nomC,prenomC,numReservation,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes);
 
@@ -55,7 +55,7 @@ R52(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlac
 R52(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox,idAct,idFilm,nomFilm,dateSortie,role,horaire,idSeance,dateProjection,diffusion3D,idClient,nomC,prenomC,numReservation,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes) -->
 
 R61 ={idFilm,nomFilm,dateSortie}~retour_ligne~
-DF61 = { 5 } # 
+DF61 = {5} # 
 
 R62(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox,idAct,idFilm,role,horaire,idSeance,dateProjection,diffusion3D,idClient,nomC,prenomC,numReservation,nbPlacesHandicapeeOn eRes,nbPlacesStandardRes,nbPlacesDBoxRes);
 
@@ -67,7 +67,7 @@ R62(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlac
 R62(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox,idAct,idFilm,role,horaire,idSeance,dateProjection,diffusion3D,idClient,nomC,prenomC,numReservation,nbPlacesHandicapeeOn eRes,nbPlacesStandardRes,nbPlacesDBoxRes) -->
 
 R71 ={idClient,nomC, prenomC}~retour_ligne~
-DF71 = { 10 } #
+DF71 = {10} #
 
 R72(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox,idAct,idFilm,role,horaire,idSeance,dateProjection,diffusion3D,idClient,numReservation,nbPlacesHandicapeeOn eRes,nbPlacesStandardRes,nbPlacesDBoxRes);
 
@@ -78,7 +78,7 @@ R72(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlac
 R72(idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox,idAct,idFilm,role,horaire,idSeance,dateProjection,diffusion3D,idClient,numReservation,nbPlacesHandicapeeOn eRes,nbPlacesStandardRes,nbPlacesDBoxRes) -->
 
 R81={idCine,numSalle,salleCompatible3D,nbPlacesHandicapee,nbPlacesStandard,nbPlacesDBox}~retour_ligne~
-DF81 = { 4 } #
+DF81 = {4} #
 
 R82(idCine,idAct,idFilm,role,horaire,idSeance,dateProjection,diffusion3D,idClient,numReservation,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes);
 
@@ -90,7 +90,7 @@ R82(idCine,idAct,idFilm,role,horaire,idSeance,dateProjection,diffusion3D,idClien
 R82(idCine,idAct,idFilm,role,horaire,idSeance,dateProjection,diffusion3D,idClient,numReservation,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes) -->
 
 R91={idFilm,role,idAct}~retour_ligne~
-DF91 = { 7 } #
+DF91 = {7} #
 
 R92(idCine,idFilm,role,horaire,idSeance,dateProjection,diffusion3D,idClient,numReservation,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes);
 
@@ -102,7 +102,7 @@ R92(idCine,idFilm,role,horaire,idSeance,dateProjection,diffusion3D,idClient,numR
 R92(idCine,idFilm,role,horaire,idSeance,dateProjection,diffusion3D,idClient,numReservation,nbPlacesHandicapeeRes,nbPlacesStandardRes,nbPlacesDBoxRes) -->
 
 R101={idSeance, idCine,horaire, dateProjection, numSalle, idFilm, diffusionEn3D}~retour_ligne~
-DF101 = { 12 } #
+DF101 = {12} #
 
 R102(idCine,role,idSeance,idClient,numReservation,nbPlacesHandicapeeeRes,nbPlacesStandardRes,nbPlacesDBoxRes);
 
@@ -114,7 +114,7 @@ R102(idCine,role,idSeance,idClient,numReservation,nbPlacesHandicapeeeRes,nbPlace
 R102(idCine,role,idSeance,idClient,numReservation,nbPlacesHandicapeeeRes,nbPlacesStandardRes,nbPlacesDBoxRes) -->
 
 R111={idClient,numReservation,nbPlacesHandicapeRes,nbPlacesStandardRes,nbPlacesDBoxRes,idSeance}~retour_ligne~
-DF111 = { 11 } #
+DF111 = {11} #
 
 R112(idCine,role,idClient,numReservation)
 DF112 = {} #
