@@ -441,4 +441,34 @@
 						- (10) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBox, idSeance \\
 						- (11) idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D \\
 															
+						On constate que l'on est bien en 1FN, ainsi qu'en 2FN. Cependant nous ne sommes pas en 3eme forme normal. En effet, avec les dfs ci-dessus, nous obtenons la clé suivante : \{idCine, idClient, numReservation, role\}. \\
+						Hors avec cette clé, nous avons des attributs non clés, qui détermines d'autres attributs non clés.adresse et ville sont deux attributs non clé qui détermine franchise et nbSalle qui sont eux aussi non clés. \\
+															
+					\subsection{Partition de la CV et et construction des schémas} 	
+					
+						\noindent R1 = \{idCine, adresse, ville\} \\  DF1 = \{idCine $\rightarrow$ adresse, ville\} \\
+						\\
+						R2 = \{idCine, franchise, nbSalle\} \\ DF2 = \{adresse, ville $\rightarrow$ franchise, nbSalle\} \\
+						\\
+						R3 = \{idCine, numSalle, salleCompatibleEn3D, nbPlaceStanard, nbPlaceHandicapes, nbDbox\} \\ DF3 = \{idCine, numSalle, $\rightarrow$ salleCompatibleEn3D, nbPlaceStanard, nbPlaceHandicapes, nbDbox\} \\S
+						\\
+						R4 = \{idFilm, nomFilm, dateSortie\} \\ DF4 = \{idFilm $\rightarrow$ nomFilm, dateSortie\} \\
+						\\
+						R5 = \{idFilm\} \\ DF5 = \{nomFilm, dateSortie $\rightarrow$ public, idReal, duree, compatible3D\} \\	
+						\\							
+						R6 = \{idFilm, role, idAct\} \\ DF6 = \{idFilm, role $\rightarrow$  idAct\} \\
+						\\
+						R7 = \{idReal, nomR, prenomR\} \\ DF7 = \{idReal $\rightarrow$ nomR, prenomR\} \\
+						\\
+						R8 = \{idAct, nomA, prenomA\} \\ DF8 = \{idAct $\rightarrow$ nomA, prenomA\} \\
+						\\
+						R9 = \{idClient, nomC, prenomC\} \\ DF9 = \{idClient $\rightarrow$ nomC, prenomC\} \\ 
+						\\
+						R10 = \{idClient, numReservation, nbPlaceStandardRes, nbPlaceHandicapesRes, nbPlaceDBoxRes, idSeance\} \\ DF10 = \{idClient, numReservation $\rightarrow$  nbPlaceStandardRes, nbPlaceHandicapesRes, nbPlaceDBoxRes, idSeance\} \\
+						\\
+						R11 = \{idSeance, idCine, horaire, dateProjection, numSalle, idFilm, diffusionEn3D\} \\ DF11 = \{idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D\} \\
+						\\
+						R12 = \{idCine, idClient, numReservation, role\} \\ DF12 = \{\} \\
+
+
 \end{document}
