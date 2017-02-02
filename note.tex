@@ -56,21 +56,21 @@
 		\vspace{0.5cm}
 		
 		Dans le cadre de ce projet nous devons créer une base de données. Nous avons décidé de modéliser la gestion de cinémas sur une grande échelle. Par exemple nous voulons savoir quels sont les cinémas de France, à qui ils appartiennent (Pathé,UGC, etc.) et ce qu'ils proposent. Comme notre modèle se base sur une certaine réalité, voici comment nous avons décomposé la chose, prenons  l'exemple d'un cinéma : \\
-		\indent Le cinéma Pathé à Atlantis, dans la ville de Nantes. Tout d'abord on voit que un cinéma est identifié par une adresse et une ville. Ensuite, notre cinéma possède des salles dans lesquelles seront diffusés des films. Chaque film est composé d'une équipe d'acteurs, d'un réalisateur et d'une date de sortie. Il peut être compatible, ou non, à la 3D. \\ 				
+		\indent Le cinéma Pathé à Atlantis, dans la ville de Nantes. Tout d'abord on voit que un cinéma est identifié par une adresse et une ville. Ensuite, notre cinéma possède des salles dans lesquelles seront diffusés des films. Chaque film est composé d'une équipe d'acteurs, d'un réalisateur et d'une date de sortie. Il peut être compatible ou non avec la 3D. \\ 				
 		\indent En ce qui concerne nos salles, elles possèdent un certain nombre de places qui sont réparties entre les places ''standards'', les places ''handicapés'' ainsi que les nouveaux sièges dBox (sièges bougeant en même temps que le film). Si elles sont compatibles, elles ont la possibilité de diffuser en 3D. \\
-		\indent Une séance dans un cinéma donné correspond à une date de projection d'un certain film dans une salle spécifique à une horaire précise, le film étant diffusé en 3D, ou non. Aujourd'hui si on va au cinéma il est possible de réserver sa séance, autrement dit, on réserve un certain nombre de places pour un film, à une horaire précise, dans un cinéma donné. 
+		\indent Une séance dans un cinéma donné correspond à une date de projection d'un certain film dans une salle spécifique à un horaire précis, le film étant diffusé ou non en 3D. Aujourd'hui si on va au cinéma il est possible de réserver sa séance, autrement dit, on réserve un certain nombre de places pour un film, à un horaire précis, dans un cinéma donné. 
 
 		\vspace{0.5cm}
 								
-	\section{Répartitions des tâches}
+	\section{Répartition des tâches}
 
 		\vspace{0.5cm}
 
 		\noindent Voici comment nous nous sommes organisés pour répartir les tâches : \\
 		\\
-		\indent Tout d'abord après les premières semaines de cours nous nous sommes réunis pour décider ensemble d'un sujet. L'idée du cinéma est venue assez naturellement et nous paraissait être à la fois concret et proche de la réalité.\\
-		\indent Ensuite nous avons défini tous les attributs de notre table, en se demandant ensemble Qu'est ce qu'on veut faire ? Comment on veut le faire ? Est-ce que un cinéma c'est vraiment comme ça ou pas ? Est-ce qu'ajouter cet attribut à du sens ou non ? etc etc. Une fois nos attributs répartits nous avons chacun pris un cinéma (on en a 4) et chaque personne a remplit la partie du tableau qui correspondait à un cinéma. Une fois qu'on a fait ça on a regardé les tuples de notre tableur et on a relevé nos dépendances fonctionnelles.\\
-		\indent Ensuite Demetre et Félix ont fait l'algorithme de décomposition et Loïc et Clément on fait l'algorithme de Bernstein. On a mit en commun le résultat des deux algorithmes afin de voir si on avait la même chose ou non, et pourquoi. Pour finir, nous avons testé la normalisation de notre schéma avec l'outil mit à notre disposition en question 5.
+		\indent Tout d'abord après les premières semaines de cours nous nous sommes réunis pour décider ensemble d'un sujet. L'idée du cinéma est venue assez naturellement et nous paraissait être à la fois concrète et proche de la réalité.\\
+		\indent Ensuite nous avons défini tous les attributs de notre table, en se demandant ensemble : Que voulons-nous faire ? Comment voulons nous le faire ? Un cinéma fonctionne t-il vraiment comme ça ? L'ajout de tel ou tel attribut est-il pertinent ? etc etc. Une fois nos attributs répartis nous avons chacun pris un cinéma (on en a 4) et chaque personne a remplit la partie du tableau qui correspondait à un cinéma. Après cela on a observé nos tuples sur tableur et on a relevé nos dépendances fonctionnelles.\\
+		\indent Ensuite Demetre et Félix ont fait l'algorithme de décomposition et Loïc et Clément ont fait l'algorithme de Bernstein. On a mis en commun le résultat des deux algorithmes afin de voir si on avait la même chose ou non, et pourquoi. Pour finir, nous avons testé la normalisation de notre schéma avec l'outil mis à notre disposition en question 5.
 						
 		\vspace{0.5cm}
 		
@@ -89,9 +89,9 @@
 		A partir de la table ci-dessous contenant tous nos attributs, nous avons déduit les douze dépendances fonctionnelles ci-dessous. Pour ce faire nous avons ajouté des attributs (id) nous permettant de simplifier nos relations.\\
 	
 		\noindent- (1) idCine $\rightarrow$ adresse, ville \\
-		- (2) adresse, ville $\rightarrow$ franchise, nbsalle \\
+		- (2) adresse, ville $\rightarrow$ franchise, nbSalle \\
 		- (3) idCine $\rightarrow$ franchise, nbSalles \\
-		- (4) idCine, numSalle $\rightarrow$ SallecompatibleEn3D, nbPlaceStandard, nbPlaceHandicape,nbDbox \\
+		- (4) idCine, numSalle $\rightarrow$ salleCompatibleEn3D, nbPlaceStandard, nbPlaceHandicape,nbDbox \\
  		- (5) idFilm $\rightarrow$ nomFilm, dateSortie \\
 		- (6) nomFilm, dateSortie $\rightarrow$ public, idReal, duree, compatible3D \\
 		- (7) idFilm, role $\rightarrow$  idAct \\
@@ -101,9 +101,11 @@
 		- (11) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBoxRes, idSeance \\
 		- (12) idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D \\
 		
+		\newpage
+		
 		Avec les dépendances fonctionnelles ci-dessus, nous obtenons le graphe des dépendances en annexe (\ref{graphe_dependances}). De cela nous déterminons la clé suivante : \{idCine, idClient, numReservation, role\}.
 		
-	\section{Algo de Bernstein}
+	\section{Algorithme de Bernstein}
 	
 		\vspace{0.5cm}
 
@@ -120,10 +122,10 @@
 
 			\vspace{0.5cm}
 
-			\noindent La couverture minimal se fait en trois parties :
+			\noindent La couverture minimale se fait en trois parties :
 
 			\begin{enumerate}[label=\ding{228}]
-				\item Toutes les dépendances doivent être élémentaire ; les décomposer si nécessaire.
+				\item Toutes les dépendances doivent être élémentaires ; les décomposer si nécessaire.
 				\item Eliminer les attributs superflus du coté gauche de la df.
 				\item Eliminer les dfs redondantes.
 			\end{enumerate}	
@@ -139,10 +141,10 @@
 				\noindent- (1) idCine $\rightarrow$ ville \\
 				- (1) idCine $\rightarrow$ adresse \\
 				- (2) adresse, ville $\rightarrow$ franchise \\
-				- (2) adresse, ville $\rightarrow$ nbsalle \\
+				- (2) adresse, ville $\rightarrow$ nbSalle \\
 				- (3) idCine $\rightarrow$ franchise \\
 				- (3) idCine $\rightarrow$ nbSalles \\
-				- (4) idCine, numSalle $\rightarrow$ SallecompatibleEn3D \\
+				- (4) idCine, numSalle $\rightarrow$ salleCompatibleEn3D \\
 		 		- (4) idCine, numSalle $\rightarrow$ nbPlaceStandard \\
 		 		- (4) idCine, numSalle $\rightarrow$ nbPlaceHandicape \\
 		 		- (4) idCine, numSalle $\rightarrow$ nbDbox \\
@@ -152,7 +154,7 @@
 				- (6) nomFilm, dateSortie $\rightarrow$ idReal \\
 				- (6) nomFilm, dateSortie $\rightarrow$ duree \\
 				- (6) nomFilm, dateSortie $\rightarrow$ compatible3D \\
-				- (7) idFilm, role $\rightarrow idAct$ \\
+				- (7) idFilm, role $\rightarrow$ idAct \\
 				- (8) idReal $\rightarrow$ nomR \\
 				- (8) idReal $\rightarrow$ prenomR \\						
 				- (9) idAct $\rightarrow$ nomA \\
@@ -175,9 +177,9 @@
 
 				\vspace{0.5cm}
 	
-				On prend toutes les dfs qui ont plus d'un attribut à gauche et on calcul leur fermeture. On élimine l'autre attribut si l'attribut de droite de la df apparaît dans le résultat, ou si il apparaît dans le résultat de la fermeture. \\
+				On prend toutes les dfs qui ont plus d'un attribut à gauche et on calcul leur fermeture. On élimine l'autre attribut si l'attribut de droite de la df apparaît dans le résultat, ou s'il apparaît dans le résultat de la fermeture. \\
 				
-				\noindent - (2) adresse, ville $\rightarrow$ franchise, nbsalle \\
+				\noindent - (2) adresse, ville $\rightarrow$ franchise, nbSalle \\
 					\\
 					\underline{adresse+} \\
 					adresse \\
@@ -185,7 +187,7 @@
 					ville \\
 				$\rightarrow$ Les deux attributs sont nécessaires. \\
 
-				\noindent - (4) idCine, numSalle $\rightarrow$ SallecompatibleEn3D, nbPlaceStandard, nbPlaceHandicape,nbDbox \\
+				\noindent - (4) idCine, numSalle $\rightarrow$ salleCompatibleEn3D, nbPlaceStandard, nbPlaceHandicape,nbDbox \\
 					\\
 					\underline{idCine+} \\
 					idCine / adresse / ville /franchise / nbSalle \\
@@ -233,14 +235,14 @@
 				\noindent Eliminons tout d'abord les dfs qui sont préservées par transitivité : \\
 	
 					\noindent- (1) idCine $\rightarrow$ adresse, ville \\
-					- (2) adresse, ville $\rightarrow$ franchise, nbsalle \\
+					- (2) adresse, ville $\rightarrow$ franchise, nbSalle \\
 					- (3) idCine $\rightarrow$ franchise, nbSalles \\
 					
 				Si l'on prend les dfs 1, 2 et 3, on remarque que l'on peut supprimer la 3 car on peut retrouver celle-ci par transitivité. Reprenons donc nos dfs restantes : \\
 					
 				\noindent- (1) idCine $\rightarrow$ adresse, ville \\
-				- (2) adresse, ville $\rightarrow$ franchise, nbsalle \\
-				- (3) idCine, numSalle $\rightarrow$ SallecompatibleEn3D, nbPlaceStandard, nbPlaceHandicape,nbDbox \\
+				- (2) adresse, ville $\rightarrow$ franchise, nbSalle \\
+				- (3) idCine, numSalle $\rightarrow$ salleCompatibleEn3D, nbPlaceStandard, nbPlaceHandicape,nbDbox \\
 		 		- (4) idFilm $\rightarrow$ nomFilm, dateSortie \\
 				- (5) nomFilm, dateSortie $\rightarrow$ public, idReal, duree, compatible3D \\
 				- (6) idFilm, role $\rightarrow$  idAct \\
@@ -250,7 +252,7 @@
 				- (10) idClient, numReservation $\rightarrow$ nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBoxRes, idSeance \\
 				- (11) idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D \\
 				
-				\noindent A présent, analysons chaque dfs une part une : \\
+				\noindent A présent, analysons chaque dépendance fonctionelle une par une : \\
 				
 				\noindent - (1) idCine $\rightarrow$ adresse, ville \\
 					\\
@@ -258,16 +260,16 @@
 					idCine\\									
 				$\rightarrow$ La df est préservée. \\		
 					
-				\noindent - (2) adresse, ville $\rightarrow$ franchise, nbsalle \\
+				\noindent - (2) adresse, ville $\rightarrow$ franchise, nbSalle \\
 					\\
 					\underline{adresse, ville+} \\
 					adresse, ville \\									
 				$\rightarrow$ La df est préservée. \\
 				
-				\noindent - (3) idCine, numSalle $\rightarrow$ SallecompatibleEn3D, nbPlaceStandard, nbPlaceHandicape,nbDbox \\
+				\noindent - (3) idCine, numSalle $\rightarrow$ salleCompatibleEn3D, nbPlaceStandard, nbPlaceHandicape,nbDbox \\
 					\\
 					\underline{idCine, numSalle+} \\
-					idCIne / adresse / ville / franchise / nbSalle / numSalle \\								
+					idCine / adresse / ville / franchise / nbSalle / numSalle \\								
 				$\rightarrow$ La df est préservée. \\													
 
 				\noindent - (4) idFilm $\rightarrow$ nomFilm, dateSortie \\
@@ -319,9 +321,9 @@
 				$\rightarrow$ La df est préservée. \\							
 				\\		
 				
-				\indent Ainsi, hormis la suppression d'une dépendance fonctionnelle transitive, nos dépendance fonctionelles ne changent pas. \\																
+				\indent Ainsi, hormis la suppression d'une dépendance fonctionnelle transitive, nos dépendances fonctionelles ne changent pas. \\																
 				\\
-				\indent On constate que l'on est bien en 1FN, ainsi qu'en 2FN. Cependant nous ne sommes pas en 3FN. En effeti, nous avons des attributs non clés, qui déterminent d'autres attributs non clés. Par exemple, adresse et ville sont deux attributs non clé qui détermine franchise et nbSalle qui sont eux aussi non clés (df(2)). \\
+				\indent On constate que l'on est bien en 1FN, ainsi qu'en 2FN. Cependant nous ne sommes pas en 3FN. En effet, nous avons des attributs non clés, qui déterminent d'autres attributs non clés. Par exemple, adresse et ville sont deux attributs non clés qui déterminent franchise et nbSalle qui sont eux aussi non clés (df(2)). \\
 				
 				\vspace{0.5cm}
 													
@@ -333,7 +335,7 @@
 				\\
 				R2 = \{\underline{adresse, ville}, franchise, nbSalle\} \\ DF2 = \{adresse, ville $\rightarrow$ franchise, nbSalle\} \\
 				\\
-				R3 = \{\underline{idCine, numSalle}, salleCompatibleEn3D, nbPlaceStanard, nbPlaceHandicapes, nbDbox\} \\ DF3 = \{idCine, numSalle, $\rightarrow$ salleCompatibleEn3D, nbPlaceStanard, nbPlaceHandicapes, nbDbox\} \\
+				R3 = \{\underline{idCine, numSalle}, salleCompatibleEn3D, nbPlaceStandard, nbPlaceHandicape, nbDbox\} \\ DF3 = \{idCine, numSalle, $\rightarrow$ salleCompatibleEn3D, nbPlaceStandard, nbPlaceHandicape, nbDbox\} \\
 				\\
 				R4 = \{\underline{idFilm}, nomFilm, dateSortie\} \\ DF4 = \{idFilm $\rightarrow$ nomFilm, dateSortie\} \\
 				\\
@@ -347,22 +349,24 @@
 				\\
 				R9 = \{\underline{idClient}, nomC, prenomC\} \\ DF9 = \{idClient $\rightarrow$ nomC, prenomC\} \\ 
 				\\
-				R10 = \{\underline{idClient, numReservation}, nbPlaceStandardRes, nbPlaceHandicapesRes, nbPlaceDBoxRes, idSeance\} \\ DF10 = \{idClient, numReservation $\rightarrow$  nbPlaceStandardRes, nbPlaceHandicapesRes, nbPlaceDBoxRes, idSeance\} \\
-				\\
+				R10 = \{\underline{idClient, numReservation}, nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBoxRes, idSeance\} \\ DF10 = \{idClient, numReservation $\rightarrow$  nbPlaceStandardRes, nbPlaceHandicapeRes, nbPlaceDBoxRes, idSeance\} \\
+				
+				\newpage 
+				
 				R11 = \{\underline{idSeance, idCine}, horaire, dateProjection, numSalle, idFilm, diffusionEn3D\} \\ DF11 = \{idSeance, idCine $\rightarrow$ horaire, dateProjection, numSalle, idFilm, diffusionEn3D\} \\
 				
-				On constate que nous n'avons pas de relation contenant toutes nos clé, c'est pourquoi nous devons créer une relation pour cela avec une dépendance fonctionnele associée vide.\\
+				On constate que nous n'avons pas de relation contenant toutes nos clés, c'est pourquoi nous devons créer une relation pour cela, avec une dépendance fonctionnelle associée vide.\\
 											
 				\noindent R12 = \{\underline{idCine, idClient, numReservation, role}\} \\ DF12 = \{\} \\
 
 				\vspace{0.5cm}
 
-		\section{Algo de décomposition}
+		\section{Algorithme de décomposition}
 
 			\vspace{0.5cm}
 			
-			Nous avons pris tous nos attributs puis nous avons suivi l'algorithme de décomposition. C'est à dire que en fonction de nos attributs et de nos dépendances fonctionnelles, nous avons pris une dépendance et avons fait une relation en fonction de cette dépendance. Puis nous avons retiré nos attributs non clés au reste de la relation originale. Ensuite on a recommencé jusqu'à arriver à une partie qui ne contient que des clés et plus de dépendance fonctionnelle.\\
-			\indent On a commencé par les df qui n'avaient qu'un attribut à gauche puis nous avons fini par celles qui avaient plusieurs attributs à gauche.
+			Nous avons pris tous nos attributs puis nous avons suivi l'algorithme de décomposition. C'est à dire que en fonction de nos attributs et de nos dépendances fonctionnelles, nous avons pris une dépendance et avons fait une relation en fonction de cette dépendance. Puis nous avons retiré nos attributs non clés du reste de la relation originale. Ensuite on a recommencé jusqu'à arriver à une partie ne contenant que des clés et plus de dépendance fonctionnelle.\\
+			\indent On a commencé par les dépendances fonctionelles qui n'avaient qu'un attribut à gauche puis nous avons fini par celles qui avaient plusieurs attributs à gauche.
 
 		\newpage
 		
@@ -386,14 +390,14 @@
 
 			\vspace{0.5cm}
 					
-		Pour le diagramme nous nous sommes basés sur le résultat de l'algorithme de décomposition qui nous a fournit des tables équivalentes aux 11 relations R1..R11. Cependant nous avons fusionnés deux fois deux tables : la table R1 et R21 car ça nous paraît plus logique d'avoir pour chaque adresse, ville, franchise et nbsalles un seul idCine qui en fait détermine un unique cinéma.\\
-		\indent Cette table devient donc la table Cinema ce qui donne plus de sens à notre modèle. Nous avons aussi fusionné R51 et R61 pour en faire une seule et même table Film, pour les mêmes raisons.\\
-		\indent Pour finir on a renommé toutes les autres tables pour leur donner un nom qui nous parle plus : R31 est devenue Realisateur, R41 est devenue Acteur, R71 est devenue Client, R81 est devenue Salle, R91 est devenue Casting, R101 est devenue Seance et 111 est devenue Reservation.
+		Pour le diagramme nous nous sommes basés sur le résultat de l'algorithme de décomposition qui nous a fourni des tables équivalentes aux 11 relations R1..R11. Cependant nous avons fusionné deux fois deux tables : la table R1 et R21 car cela nous paraît plus logique d'avoir pour chaque adresse, ville, franchise et nbSalles un seul idCine qui détermine un unique cinéma.\\
+		\indent Cette table devient donc la table Cinema, ce qui donne plus de sens à notre modèle. Nous avons aussi fusionné R51 et R61 pour en faire une seule et même table Film pour les mêmes raisons.\\
+		\indent Pour finir on a renommé toutes les autres tables pour leur donner un nom plus parlant : R31 est devenue Realisateur, R41 est devenue Acteur, R71 est devenue Client, R81 est devenue Salle, R91 est devenue Casting, R101 est devenue Seance et 111 est devenue Reservation.
 
 				\begin{figure}[!h]		
 					\hspace{-0.5cm}
 					{\includegraphics[height=12cm]{picture/DiagrammeUML.png}}
-					\caption{DiagrammeUML de nos tables}
+					\caption{Diagramme UML de nos tables}
 					\label{UML}
 					\vspace{0.5cm}	
 				\end{figure}		
@@ -405,8 +409,7 @@
 
 			\vspace{0.5cm}
 			
-			
-			
+			Cette première partie nous a permis de bien poser les bases de notre base de donnée. De plus, l'algorithme de décomposition nous permet d'obtenir des tables qui nous semblent cohérentes avec la réalité. Pour la suite, nous avons déjà quelques idées de contraintes, de triggers et de fonctions qu'il nous faudra intégrer pour bien gérer nos cinémas. \\			
 
 			\newpage
 
@@ -443,7 +446,7 @@
 				\begin{figure}[!h]
 					\centering						
 					\rotatebox{90}{\includegraphics[height=12cm]{picture/graphe_dependances.png}}
-					\caption{Graphes des dépendances}
+					\caption{Graphe des dépendances}
 					\label{graphe_dependances}	
 				\end{figure}	
 					
