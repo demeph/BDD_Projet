@@ -1,9 +1,0 @@
-Nous avons pris tous nos attributs puis on a suivi l'algorithme de décomposition c'est à dire que en fonction de nos attributs et de nos dépendances fonctionnelles on a pris une dépendance, on a fait une relation en fonction de cette dépendance puis on a retiré nos attributs non clés au reste de la relation originale. Ensuite on a recommencé jusqu'à arriver à une partie qui ne contient que des clés et plus de df.
-On a commencé par les df qui n'avaient que un attribut à gauche puis on a finit par celles qui avaient plusieurs attributs à gauche.
-
-
-
------------
- 
-Pour le diagramme nous nous sommes basés sur le résultat de l'algorithme de décomposition qui nous a fournit des tables équivalentes aux 11 relations R1..R11. Cependant nous avons fusionnés deux fois deux tables : la table R1 et R21 car ça nous paraît plus logique d'avoir pour chaque adresse, ville, franchise et nbsalles un seul idCine qui en fait détermine un unique cinéma. Cette table devient donc la table Cinéma ce qui donne plus de sens à notre modèle. Nous avons aussi fusionné R51 et R61 pour en faire une seule et même table Film, pour les mêmes raisons.
-Pour finir on a renommé toutes les autres tables pour leur donner un nom qui nous parle plus : R31 est devenue Réalisateur, R41 est devenue Acteur, R71 est devenue Client, R81 est devenue Salle, R91 est devenue Casting, R101 est devenue Seance, 111 est devenue Réservation.
