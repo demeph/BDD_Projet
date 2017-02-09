@@ -1,0 +1,8 @@
+chazngement de card entre casting et film parce que en fait castin
+g c'est une table role donc à un film on^peut avoir plusieurs roles.
+
+changemetn de card entre reserv et seance on met 1 n car une seance peut avoir plusieurs résas.
+
+IMPORTANT
+
+aussi, on enlève idCine comme PK dans Seance car sinon il faut la rajotuer dans résa sinon on a pas de moyen de faire une FK. Du coup on l'enlève de PK.
