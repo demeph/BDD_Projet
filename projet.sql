@@ -1,94 +1,94 @@
 DROP TABLE Casting;
-DROP TABLE Acteur;
 DROP TABLE Reservation;
-DROP TABLE Client;
 DROP TABLE Seance;
-DROP TABLE Film;
-DROP TABLE Realisateur;
 DROP TABLE Salle;
 DROP TABLE Cinema;
-
-CREATE TABLE Casting
-(
-idFilm INTEGER,
-role VARCHAR2(40),
-idAct INTEGER,	
-PRIMARY KEY (idFilm) REFERENCES Film
-);
-
-CREATE TABLE Acteur
-(
-idAct INTEGER,
-nomA VARCHAR2(20),
-prenomA VARCHAR2(20),
-PRIMARY KEY (idAct)
-);
-
-CREATE TABLE Reservation
-(
-idClient INTEGER,
-idSeance INTEGER,
-numReservation INTEGER,
-nbPlaceHandicapeRes INTEGER,
-nbPlaceStandardRes INTEGER,
-nbPlaceDboxRes INTEGER
-);
-
-CREATE TABLE Client
-(
-idClient INTEGER,
-nomC VARCHAR2(20),
-prenomC VARCHAR2(20),
-PRIMARY KEY (idClient)
-);
-
-CREATE TABLE Seance
-(
-idSeance INTEGER,
-idCine INTEGER,
-idFilm INTEGER,
-horaire TIME,
-dateProjection DATE,
-numSalle INTEGER,
-diffusionEn3D BOOLEAN
-);
+DROP TABLE Film;
+DROP TABLE Client;
+DROP TABLE Acteur;
+DROP TABLE Realisateur;
 
 CREATE TABLE Film
 (
-idFilm INTEGER,
+idFilm INTEGER PRIMARY KEY,
 nomFilm VARCHAR2(40),
 dateSortie DATE,
-public VARCHAR2(10),
+publicFilm VARCHAR2(10),
 duree INTEGER,
 idReal INTEGER,
-compatible3D BOOLEAN,
-PRIMARY KEY (idFilm)
-);
-
-CREATE TABLE Realisateur
-(
-idReal INTEGER,
-nomR VARCHAR2(20),
-prenomR VARCHAR2(20),
-PRIMARY KEY (idReal)
-);
-
-CREATE TABLE Salle
-(
-idCine INTEGER,
-numSalle INTEGER,
-salleCompatible3D BOOLEAN,
-nbPlaceHandicape INTEGER,
-nbPlaceStandard INTEGER,
-nbPlaceDbox INTEGER
+compatible3D INTEGER check(compatible3D < 0 and compatible3D > 1)
 );
 
 CREATE TABLE Cinema
 (
-idCinema INTEGER,
+idCinema INTEGER PRIMARY KEY,
 ville VARCHAR2(50),
 adresse VARCHAR2(50),
 franchise VARCHAR2(20),
-nbSalle INTEGER,
-PRIMARY KEY (idCinema)
+nbSalle INTEGER
+);
+
+CREATE TABLE Realisateur
+(
+idReal INTEGER PRIMARY KEY,
+nomR VARCHAR2(20),
+prenomR VARCHAR2(20)
+);
+
+CREATE TABLE Client
+(
+idClient INTEGER PRIMARY KEY,
+nomC VARCHAR2(20),
+prenomC VARCHAR2(20)
+);
+
+CREATE TABLE Acteur
+(
+idAct INTEGER PRIMARY KEY,
+nomA VARCHAR2(20),
+prenomA VARCHAR2(20)
+);
+
+
+
+CREATE TABLE Casting
+(
+idFilm INTEGER REFERENCES Film,
+role VARCHAR2(40),
+idAct INTEGER,
+PRIMARY KEY(idFilm,role)
+);
+
+CREATE TABLE Seance
+(
+idSeance INTEGER PRIMARY KEY,
+idCine INTEGER REFERENCES Cinema,
+idFilm INTEGER REFERENCES Film,
+horaire  TIMESTAMP,
+dateProjection DATE,
+numSalle INTEGER,
+diffusionEn3D INTEGER check (diffusionEn3D > 0 and diffusionEn3D > 1)
+);
+
+
+CREATE TABLE Reservation
+(
+idClient INTEGER REFERENCES Client,
+idSeance INTEGER REFERENCES Seance,
+numReservation INTEGER,
+nbPlaceHandicapeRes INTEGER,
+nbPlaceStandardRes INTEGER,
+nbPlaceDboxRes INTEGER,
+PRIMARY KEY(idClient,numReservation)
+);
+
+CREATE TABLE Salle
+(
+idCine INTEGER REFERENCES Cinema,
+numSalle INTEGER,
+salleCompatible3D INTEGER check (salleCompatible3D < 0 and salleCompatible3D > 1),
+nbPlaceHandicape INTEGER,
+nbPlaceStandard INTEGER,
+nbPlaceDbox INTEGER,
+PRIMARY KEY(idCine,numSalle)
 );
