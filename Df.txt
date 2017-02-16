@@ -9,4 +9,4 @@ idReal-->nomR,prenomR;
 idAct-->nomA,prenomA;
 idClient-->nomC,prenomC;
 idClient,numReservation-->nbPlaceStandardRes,nbPlaceHandicapeRes,nbPlaceDBox,idSeance;
-idSeance,idCine-->horaire,dateProjection,numSalle,idFilm,diffusionEn3D;
+idSeance-->idCine,horaire,dateProjection,numSalle,idFilm,diffusionEn3D;
