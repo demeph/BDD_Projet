@@ -48,6 +48,8 @@ awk_script="{print($awk_accumulator)}"
 
 #tail -n +2 $fichier | awk -F ';' '{print($2,"\t",$1)}'
 #echo "script : $awk_script"
-tail -n +2 $fichier | awk -F ';' "$awk_script" | sort -gu | sed -e "s/[a-zA-Z._]\+/'&'/g" -e 's/ ,/,/g' -e "s/.*/INSERT INTO $table_name Values (&);/"
+
+#tail -n +2 $fichier | awk -F ';' "$awk_script" | sort -u | sed -e "s/'/''/g" -e 's/\s\+,/,/g' -e "s/\([,(]\)\s*\([a-zA-Z][-a-zA-Z_'. ]*\)/\1 '\2'/g" -e "s/.*/INSERT INTO $table_name Values (&);/"
+ tail -n +2 $fichier | awk -F ';' "$awk_script" | sort -u | sed -e "s/'/''/g" -e 's/\s\+,/,/g' -e "s/\([,(]\)\s*\([a-zA-Z][-a-zA-Z_'. ]*\)/\1 '\2'/g" -e "s/.*/INSERT INTO $table_name Values (&);/"
 
 #echo "all done : $accumulator"
