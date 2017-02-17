@@ -16,12 +16,12 @@ dateSortie DATE,
 publicFilm VARCHAR2(10),
 duree INTEGER,
 idReal INTEGER,
-compatible3D INTEGER check(compatible3D < 0 and compatible3D > 1)
+filmCompatible3D INTEGER check(compatible3D < 0 and compatible3D > 1)
 );
 
 CREATE TABLE Cinema
 (
-idCinema INTEGER PRIMARY KEY,
+idCine INTEGER PRIMARY KEY,
 ville VARCHAR2(50),
 adresse VARCHAR2(50),
 franchise VARCHAR2(20),

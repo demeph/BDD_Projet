@@ -26,7 +26,12 @@ while [ $# -gt 0 ]
 do
     position=$(head -n 1 tableau.csv | tr ';' '\n' | grep -n "^\s*$1\s*$" | cut -f1 -d:)
 #    echo $1 en position $position
-    awk_accumulator="$awk_accumulator, \", \", \$$position"
+    if [ -z $position ]
+    then
+        echo "error: unmatched attribute : $1"
+        exit
+    fi
+    awk_accumulator="$awk_accumulator, \",\", \$$position"
     accumulator="$accumulator,$position"
     shift
 done
@@ -43,7 +48,6 @@ awk_script="{print($awk_accumulator)}"
 
 #tail -n +2 $fichier | awk -F ';' '{print($2,"\t",$1)}'
 #echo "script : $awk_script"
-tail -n +2 $fichier | awk -F ';' "$awk_script" | sort -gu | sed -e "s/[a-zA-Z]+/\'&\'/g"
-# -e "s/.*/INSERT INTO $table_name Values (&);/"
+tail -n +2 $fichier | awk -F ';' "$awk_script" | sort -gu | sed -e "s/[a-zA-Z._]\+/'&'/g" -e 's/ ,/,/g' -e "s/.*/INSERT INTO $table_name Values (&);/"
 
 #echo "all done : $accumulator"
