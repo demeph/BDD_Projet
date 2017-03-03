@@ -44,5 +44,5 @@ tail -n +2 $fichier | awk -F ';' "$awk_script" | sort -u |\
 -e "s/\([,(]\)\s*\([a-zA-Z[:digit:]][-a-zA-Z_'. [:digit:]:/]*\)/\1 '\2'/g" \
 -e "s/'\([[:digit:]]\+\)'/\1/g" \
 -e "s/.*/INSERT INTO $table_name Values (&);/" \
--e "s/'\([[:digit:]]\{2\}\/[[:digit:]]\{2\}\/[[:digit:]]\{4\}\)'/to_date(\1, 'DD\/MM\/YYYY')/g" \
--e "s/'\([[:digit:]]\{2\}\/[[:digit:]]\{2\}\/[[:digit:]]\{4\} [[:digit:]]\{2\}:[[:digit:]]\{2\}\)'/to_date(\1, 'DD\/MM\/YYYY HH24:MI')/g"
+-e "s/\('[[:digit:]]\{2\}\/[[:digit:]]\{2\}\/[[:digit:]]\{4\}'\)/to_date(\1, 'DD\/MM\/YYYY')/g" \
+-e "s/\('[[:digit:]]\{2\}\/[[:digit:]]\{2\}\/[[:digit:]]\{4\} [[:digit:]]\{2\}:[[:digit:]]\{2\}'\)/to_date(\1, 'DD\/MM\/YYYY HH24:MI')/g"
