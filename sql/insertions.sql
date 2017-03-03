@@ -1,36 +1,56 @@
-INSERT INTO Film Values (1, 'xXx: Reactivated', to_date('19/01/2017', 'DD/MM/YYYY'), 'Tout public', 110, 1, 1);
-INSERT INTO Film Values (2, 'Assassin''s Creeds', to_date('21/12/2016', 'DD/MM/YYYY'), -12, 140, 2, 1);
-INSERT INTO Film Values (3, 'Lalaland', to_date('25/01/2017', 'DD/MM/YYYY'), 'Tout public', 125, 3, 0);
-INSERT INTO Cinema Values (1, 'St-Herblain', 'Place Jean-Bart', 'UGC', 10);
-INSERT INTO Cinema Values (2, 'St-Herblain', 'Allée la Pérouse', 'Pathé Gaumont', 12);
-INSERT INTO Cinema Values (3, 'Nantes', '12 Place du Commerce', 'Pathé Gaumont', 8);
-INSERT INTO Cinema Values (4, 'Angers', '1ère Avenue des Droits de l''Homme', 'Pathé Gaumont', 5);
-INSERT INTO Realisateur Values (1, 'Caruso', 'Daniel John');
-INSERT INTO Realisateur Values (2, 'Kurzel', 'Justin');
-INSERT INTO Realisateur Values (3, 'Chazelle', 'Damien');
-INSERT INTO Client Values (1, 'Martin', 'herve');
-INSERT INTO Client Values (2, 'Dupont', 'Marc');
-INSERT INTO Client Values (3, 'Dubois', 'Jeremie');
-INSERT INTO Client Values (4, 'Morgan', 'philippe');
-INSERT INTO Client Values (5, 'David', 'jean');
-INSERT INTO Acteur Values (10, 'gleeson', 'brendan');
-INSERT INTO Acteur Values (11, 'rampling', 'charlotte');
-INSERT INTO Acteur Values (12, 'labed', 'Ariane');
-INSERT INTO Acteur Values (13, 'gosling', 'ryan');
-INSERT INTO Acteur Values (14, 'stone', 'emma');
-INSERT INTO Acteur Values (15, 'legend', 'john');
-INSERT INTO Acteur Values (16, 'DeWitt', 'Rosemarie');
-INSERT INTO Acteur Values (17, 'Wittrock', 'Finn');
-INSERT INTO Acteur Values (18, 'Simmons', 'J.K');
-INSERT INTO Acteur Values (1, 'diesel', 'vin');
-INSERT INTO Acteur Values (2, 'yan', 'donnie');
-INSERT INTO Acteur Values (3, 'padukone', 'deepika');
-INSERT INTO Acteur Values (4, 'wu', 'kris');
-INSERT INTO Acteur Values (5, 'rose', 'ruby ');
-INSERT INTO Acteur Values (6, 'McCann', 'rory ');
-INSERT INTO Acteur Values (7, 'fassbender', 'michael');
-INSERT INTO Acteur Values (8, 'cotillard', 'marion');
-INSERT INTO Acteur Values (9, 'irons', 'jeremy');
+DROP films_seq;
+CREATE SEQUENCE films_seq start with 0 increment by 1 minvalue 0;
+
+INSERT INTO Film Values (films_seq.nextval, 'xXx: Reactivated', to_date('19/01/2017', 'DD/MM/YYYY'), 'Tout public', 110, 1, 1);
+INSERT INTO Film Values (films_seq.nextval, 'Assassin''s Creeds', to_date('21/12/2016', 'DD/MM/YYYY'), -12, 140, 2, 1);
+INSERT INTO Film Values (films_seq.nextval, 'Lalaland', to_date('25/01/2017', 'DD/MM/YYYY'), 'Tout public', 125, 3, 0);
+
+DROP cine_seq;
+CREATE SEQUENCE cine_seq start with 0 increment by 1 minvalue 0;
+
+INSERT INTO Cinema Values (cine_seq.nextval, 'St-Herblain', 'Place Jean-Bart', 'UGC', 10);
+INSERT INTO Cinema Values (cine_seq.nextval, 'St-Herblain', 'Allée la Pérouse', 'Pathé Gaumont', 12);
+INSERT INTO Cinema Values (cine_seq.nextval, 'Nantes', '12 Place du Commerce', 'Pathé Gaumont', 8);
+INSERT INTO Cinema Values (cine_seq.nextval, 'Angers', '1ère Avenue des Droits de l''Homme', 'Pathé Gaumont', 5);
+
+DROP real_seq;
+CREATE SEQUENCE real_seq start with 0 increment by 1 minvalue 0;
+
+INSERT INTO Realisateur Values (real_seq.nextval, 'Caruso', 'Daniel John');
+INSERT INTO Realisateur Values (real_seq.nextval, 'Kurzel', 'Justin');
+INSERT INTO Realisateur Values (real_seq.nextval, 'Chazelle', 'Damien');
+
+DROP clients_seq;
+CREATE SEQUENCE clients_seq start with 0 increment by 1 minvalue 0;
+
+INSERT INTO Client Values (clients_seq.nextval, 'Martin', 'herve');
+INSERT INTO Client Values (clients_seq.nextval, 'Dupont', 'Marc');
+INSERT INTO Client Values (clients_seq.nextval, 'Dubois', 'Jeremie');
+INSERT INTO Client Values (clients_seq.nextval, 'Morgan', 'philippe');
+INSERT INTO Client Values (clients_seq.nextval, 'David', 'jean');
+
+DROP acteur_seq;
+CREATE SEQUENCE acteur_seq start with 0 increment by 1 minvalue 0;
+
+INSERT INTO Acteur Values (acteur_seq.nextval, 'diesel', 'vin');
+INSERT INTO Acteur Values (acteur_seq.nextval, 'yan', 'donnie');
+INSERT INTO Acteur Values (acteur_seq.nextval, 'padukone', 'deepika');
+INSERT INTO Acteur Values (acteur_seq.nextval, 'wu', 'kris');
+INSERT INTO Acteur Values (acteur_seq.nextval, 'rose', 'ruby ');
+INSERT INTO Acteur Values (acteur_seq.nextval, 'McCann', 'rory ');
+INSERT INTO Acteur Values (acteur_seq.nextval, 'fassbender', 'michael');
+INSERT INTO Acteur Values (acteur_seq.nextval, 'cotillard', 'marion');
+INSERT INTO Acteur Values (acteur_seq.nextval, 'irons', 'jeremy');
+INSERT INTO Acteur Values (acteur_seq.nextval, 'gleeson', 'brendan');
+INSERT INTO Acteur Values (acteur_seq.nextval, 'rampling', 'charlotte');
+INSERT INTO Acteur Values (acteur_seq.nextval, 'labed', 'Ariane');
+INSERT INTO Acteur Values (acteur_seq.nextval, 'gosling', 'ryan');
+INSERT INTO Acteur Values (acteur_seq.nextval, 'stone', 'emma');
+INSERT INTO Acteur Values (acteur_seq.nextval, 'legend', 'john');
+INSERT INTO Acteur Values (acteur_seq.nextval, 'DeWitt', 'Rosemarie');
+INSERT INTO Acteur Values (acteur_seq.nextval, 'Wittrock', 'Finn');
+INSERT INTO Acteur Values (acteur_seq.nextval, 'Simmons', 'J.K');
+
 INSERT INTO Casting Values (1, 'adele wofl', 5);
 INSERT INTO Casting Values (1, 'nicks', 4);
 INSERT INTO Casting Values (1, 'serena unger', 3);
@@ -50,15 +70,21 @@ INSERT INTO Casting Values (3, 'Keith', 15);
 INSERT INTO Casting Values (3, 'Laura', 16);
 INSERT INTO Casting Values (3, 'Mia', 14);
 INSERT INTO Casting Values (3, 'Sebastian', 13);
-INSERT INTO Seance Values (1, 1, 1, to_date('24/01/2017 20:00', 'DD/MM/YYYY HH24:MI'), 7, 1);
-INSERT INTO Seance Values (2, 2, 1, to_date('27/01/2017 16:30', 'DD/MM/YYYY HH24:MI'), 11, 0);
-INSERT INTO Seance Values (3, 3, 2, to_date('10/01/2017 11:00', 'DD/MM/YYYY HH24:MI'), 1, 0);
-INSERT INTO Seance Values (4, 4, 3, to_date('10/01/2017 22:00', 'DD/MM/YYYY HH24:MI'), 3, 0);
+
+DROP seance_seq;
+CREATE SEQUENCE seance_seq start with 0 increment by 1 minvalue 0;
+
+INSERT INTO Seance Values (seance_seq.nextval, 1, 1, to_date('24/01/2017 20:00', 'DD/MM/YYYY HH24:MI'), 7, 1);
+INSERT INTO Seance Values (seance_seq.nextval, 2, 1, to_date('27/01/2017 16:30', 'DD/MM/YYYY HH24:MI'), 11, 0);
+INSERT INTO Seance Values (seance_seq.nextval, 3, 2, to_date('10/01/2017 11:00', 'DD/MM/YYYY HH24:MI'), 1, 0);
+INSERT INTO Seance Values (seance_seq.nextval, 4, 3, to_date('10/01/2017 22:00', 'DD/MM/YYYY HH24:MI'), 3, 0);
+
 INSERT INTO Reservation Values (1, 1, 4, 0, 2, 0);
 INSERT INTO Reservation Values (2, 1, 8, 1, 2, 0);
 INSERT INTO Reservation Values (3, 2, 15, 0, 2, 2);
 INSERT INTO Reservation Values (4, 3, 16, 0, 1, 2);
 INSERT INTO Reservation Values (5, 4, 23, 0, 0, 2);
+
 INSERT INTO Salle Values (1, 7, 1, 3, 100, 0);
 INSERT INTO Salle Values (2, 11, 1, 5, 255, 10);
 INSERT INTO Salle Values (3, 1, 0, 10, 345, 10);
