@@ -1,1 +1,0 @@
-cut -d ; -f 24,28 BDD_Tableau.csv
