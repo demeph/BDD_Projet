@@ -13,10 +13,10 @@ CREATE TABLE Film
 idFilm INTEGER PRIMARY KEY,
 nomFilm VARCHAR2(40),
 dateSortie DATE,
-publicFilm VARCHAR2(10),
+publicFilm VARCHAR2(20),
 duree INTEGER,
 idReal INTEGER,
-filmCompatible3D INTEGER check(compatible3D < 0 and compatible3D > 1)
+filmCompatible3D INTEGER check( filmCompatible3D = 0 or filmCompatible3D = 1)
 );
 
 CREATE TABLE Cinema
@@ -64,10 +64,9 @@ CREATE TABLE Seance
 idSeance INTEGER PRIMARY KEY,
 idCine INTEGER REFERENCES Cinema,
 idFilm INTEGER REFERENCES Film,
-horaire  TIMESTAMP,
 dateProjection DATE,
 numSalle INTEGER,
-diffusionEn3D INTEGER check (diffusionEn3D > 0 and diffusionEn3D > 1)
+diffusionEn3D INTEGER check (diffusionEn3D = 0 or diffusionEn3D = 1)
 );
 
 
@@ -86,7 +85,7 @@ CREATE TABLE Salle
 (
 idCine INTEGER REFERENCES Cinema,
 numSalle INTEGER,
-salleCompatible3D INTEGER check (salleCompatible3D < 0 and salleCompatible3D > 1),
+salleCompatible3D INTEGER check (salleCompatible3D = 0 or salleCompatible3D = 1),
 nbPlaceHandicape INTEGER,
 nbPlaceStandard INTEGER,
 nbPlaceDbox INTEGER,
