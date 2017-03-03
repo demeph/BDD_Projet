@@ -1,32 +1,32 @@
 idCine;adresse;ville;franchise;nbSalle;numSalle;salleCompatible3D;nbPlaceStandard;nbPlaceHandicape;nbPlaceDbox;idFilm;nomFilm;dateSortie;duree;publicFilm;filmCompatible3D;idReal;nomR;prenomR;idAct;nomA;prenomA;role ;idSeance;dateProjection;diffusionEn3D;idClient;nomC;prenomC;numReservation;nbPlaceStandardRes;nbPlaceHandicapeRes;nbPlaceDboxRes
-1;Place Jean-Bart;St-Herblain;UGC;10;7;oui;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;oui;1;Caruso;Daniel John;1;diesel;vin;xander cage;1;24/01/2017 20:00;oui;1;Martin;herve;4;2;0;0
-1;Place Jean-Bart;St-Herblain;UGC;10;7;oui;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;oui;1;Caruso;Daniel John;2;yan;donnie;xiang;1;24/01/2017 20:00;oui;1;Martin;herve;4;2;0;0
-1;Place Jean-Bart;St-Herblain;UGC;10;7;oui;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;oui;1;Caruso;Daniel John;3;padukone;deepika;serena unger;1;24/01/2017 20:00;oui;1;Martin;herve;4;2;0;0
-1;Place Jean-Bart;St-Herblain;UGC;10;7;oui;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;oui;1;Caruso;Daniel John;4;wu;kris;nicks;1;24/01/2017 20:00;oui;1;Martin;herve;4;2;0;0
-1;Place Jean-Bart;St-Herblain;UGC;10;7;oui;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;oui;1;Caruso;Daniel John;5;rose;ruby ;adele wofl;1;24/01/2017 20:00;oui;1;Martin;herve;4;2;0;0
-1;Place Jean-Bart;St-Herblain;UGC;10;7;oui;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;oui;1;Caruso;Daniel John;6;McCann;rory ;tennyson torch;1;24/01/2017 20:00;oui;1;Martin;herve;4;2;0;0
-1;Place Jean-Bart;St-Herblain;UGC;10;7;oui;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;oui;1;Caruso;Daniel John;1;diesel;vin;xander cage;1;24/01/2017 20:00;oui;2;Dupont;Marc;8;2;1;0
-1;Place Jean-Bart;St-Herblain;UGC;10;7;oui;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;oui;1;Caruso;Daniel John;2;yan;donnie;xiang;1;24/01/2017 20:00;oui;2;Dupont;Marc;8;2;1;0
-1;Place Jean-Bart;St-Herblain;UGC;10;7;oui;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;oui;1;Caruso;Daniel John;3;padukone;deepika;serena unger;1;24/01/2017 20:00;oui;2;Dupont;Marc;8;2;1;0
-1;Place Jean-Bart;St-Herblain;UGC;10;7;oui;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;oui;1;Caruso;Daniel John;4;wu;kris;nicks;1;24/01/2017 20:00;oui;2;Dupont;Marc;8;2;1;0
-1;Place Jean-Bart;St-Herblain;UGC;10;7;oui;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;oui;1;Caruso;Daniel John;5;rose;ruby ;adele wofl;1;24/01/2017 20:00;oui;2;Dupont;Marc;8;2;1;0
-1;Place Jean-Bart;St-Herblain;UGC;10;7;oui;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;oui;1;Caruso;Daniel John;6;McCann;rory ;tennyson torch;1;24/01/2017 20:00;oui;2;Dupont;Marc;8;2;1;0
-2;Allée la Pérouse;St-Herblain;Pathé Gaumont;12;11;oui;255;5;10;1;xXx: Reactivated;19/01/2017;110;Tout public;oui;1;Caruso;Daniel John;1;diesel;vin;xander cage;2;27/01/2017 16:30;non;3;Dubois;Jeremie;15;2;0;2
-2;Allée la Pérouse;St-Herblain;Pathé Gaumont;12;11;oui;255;5;10;1;xXx: Reactivated;19/01/2017;110;Tout public;oui;1;Caruso;Daniel John;2;yan;donnie;xiang;2;27/01/2017 16:30;non;3;Dubois;Jeremie;15;2;0;2
-2;Allée la Pérouse;St-Herblain;Pathé Gaumont;12;11;oui;255;5;10;1;xXx: Reactivated;19/01/2017;110;Tout public;oui;1;Caruso;Daniel John;3;padukone;deepika;serena unger;2;27/01/2017 16:30;non;3;Dubois;Jeremie;15;2;0;2
-2;Allée la Pérouse;St-Herblain;Pathé Gaumont;12;11;oui;255;5;10;1;xXx: Reactivated;19/01/2017;110;Tout public;oui;1;Caruso;Daniel John;4;wu;kris;nicks;2;27/01/2017 16:30;non;3;Dubois;Jeremie;15;2;0;2
-2;Allée la Pérouse;St-Herblain;Pathé Gaumont;12;11;oui;255;5;10;1;xXx: Reactivated;19/01/2017;110;Tout public;oui;1;Caruso;Daniel John;5;rose;ruby ;adele wofl;2;27/01/2017 16:30;non;3;Dubois;Jeremie;15;2;0;2
-2;Allée la Pérouse;St-Herblain;Pathé Gaumont;12;11;oui;255;5;10;1;xXx: Reactivated;19/01/2017;110;Tout public;oui;1;Caruso;Daniel John;6;McCann;rory ;tennyson torch;2;27/01/2017 16:30;non;3;Dubois;Jeremie;15;2;0;2
-3;12 Place du Commerce;Nantes;Pathé Gaumont;8;1;non;345;10;10;2;Assassin's Creeds;21/12/2016;140;-12;oui;2;Kurzel;Justin;7;fassbender;michael;cal lynch;3;10/01/2017 11:00;non;4;Morgan;philippe;16;1;0;2
-3;12 Place du Commerce;Nantes;Pathé Gaumont;8;1;non;345;10;10;2;Assassin's Creeds;21/12/2016;140;-12;oui;2;Kurzel;Justin;7;fassbender;michael;aguilar de nerha;3;10/01/2017 11:00;non;4;Morgan;philippe;16;1;0;2
-3;12 Place du Commerce;Nantes;Pathé Gaumont;8;1;non;345;10;10;2;Assassin's Creeds;21/12/2016;140;-12;oui;2;Kurzel;Justin;8;cotillard;marion;sofia;3;10/01/2017 11:00;non;4;Morgan;philippe;16;1;0;2
-3;12 Place du Commerce;Nantes;Pathé Gaumont;8;1;non;345;10;10;2;Assassin's Creeds;21/12/2016;140;-12;oui;2;Kurzel;Justin;9;irons;jeremy;rikkin;3;10/01/2017 11:00;non;4;Morgan;philippe;16;1;0;2
-3;12 Place du Commerce;Nantes;Pathé Gaumont;8;1;non;345;10;10;2;Assassin's Creeds;21/12/2016;140;-12;oui;2;Kurzel;Justin;10;gleeson;brendan;joseph lynch;3;10/01/2017 11:00;non;4;Morgan;philippe;16;1;0;2
-3;12 Place du Commerce;Nantes;Pathé Gaumont;8;1;non;345;10;10;2;Assassin's Creeds;21/12/2016;140;-12;oui;2;Kurzel;Justin;11;rampling;charlotte;Ellen Kaye;3;10/01/2017 11:00;non;4;Morgan;philippe;16;1;0;2
-3;12 Place du Commerce;Nantes;Pathé Gaumont;8;1;non;345;10;10;2;Assassin's Creeds;21/12/2016;140;-12;oui;2;Kurzel;Justin;12;labed;Ariane;Maria;3;10/01/2017 11:00;non;4;Morgan;philippe;16;1;0;2
-4;1ère Avenue des Droits de l'Homme;Angers;Pathé Gaumont;5;3;non;75;3;3;3;Lalaland;25/01/2017;125;Tout public;non;3;Chazelle;Damien;13;gosling;ryan;Sebastian;4;10/01/2017 22:00;non;5;David;jean;23;0;0;2
-4;1ère Avenue des Droits de l'Homme;Angers;Pathé Gaumont;5;3;non;75;3;3;3;Lalaland;25/01/2017;125;Tout public;non;3;Chazelle;Damien;14;stone;emma;Mia;4;10/01/2017 22:00;non;5;David;jean;23;0;0;2
-4;1ère Avenue des Droits de l'Homme;Angers;Pathé Gaumont;5;3;non;75;3;3;3;Lalaland;25/01/2017;125;Tout public;non;3;Chazelle;Damien;15;legend;john;Keith;4;10/01/2017 22:00;non;5;David;jean;23;0;0;2
-4;1ère Avenue des Droits de l'Homme;Angers;Pathé Gaumont;5;3;non;75;3;3;3;Lalaland;25/01/2017;125;Tout public;non;3;Chazelle;Damien;16;DeWitt;Rosemarie;Laura;4;10/01/2017 22:00;non;5;David;jean;23;0;0;2
-4;1ère Avenue des Droits de l'Homme;Angers;Pathé Gaumont;5;3;non;75;3;3;3;Lalaland;25/01/2017;125;Tout public;non;3;Chazelle;Damien;17;Wittrock;Finn;Greg;4;10/01/2017 22:00;non;5;David;jean;23;0;0;2
-4;1ère Avenue des Droits de l'Homme;Angers;Pathé Gaumont;5;3;non;75;3;3;3;Lalaland;25/01/2017;125;Tout public;non;3;Chazelle;Damien;18;Simmons;J.K;Bill;4;10/01/2017 22:00;non;5;David;jean;23;0;0;2
+1;Place Jean-Bart;St-Herblain;UGC;10;7;1;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;1;1;Caruso;Daniel John;1;diesel;vin;xander cage;1;24/01/2017 20:00;1;1;Martin;herve;4;2;0;0
+1;Place Jean-Bart;St-Herblain;UGC;10;7;1;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;1;1;Caruso;Daniel John;2;yan;donnie;xiang;1;24/01/2017 20:00;1;1;Martin;herve;4;2;0;0
+1;Place Jean-Bart;St-Herblain;UGC;10;7;1;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;1;1;Caruso;Daniel John;3;padukone;deepika;serena unger;1;24/01/2017 20:00;1;1;Martin;herve;4;2;0;0
+1;Place Jean-Bart;St-Herblain;UGC;10;7;1;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;1;1;Caruso;Daniel John;4;wu;kris;nicks;1;24/01/2017 20:00;1;1;Martin;herve;4;2;0;0
+1;Place Jean-Bart;St-Herblain;UGC;10;7;1;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;1;1;Caruso;Daniel John;5;rose;ruby ;adele wofl;1;24/01/2017 20:00;1;1;Martin;herve;4;2;0;0
+1;Place Jean-Bart;St-Herblain;UGC;10;7;1;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;1;1;Caruso;Daniel John;6;McCann;rory ;tennyson torch;1;24/01/2017 20:00;1;1;Martin;herve;4;2;0;0
+1;Place Jean-Bart;St-Herblain;UGC;10;7;1;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;1;1;Caruso;Daniel John;1;diesel;vin;xander cage;1;24/01/2017 20:00;1;2;Dupont;Marc;8;2;1;0
+1;Place Jean-Bart;St-Herblain;UGC;10;7;1;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;1;1;Caruso;Daniel John;2;yan;donnie;xiang;1;24/01/2017 20:00;1;2;Dupont;Marc;8;2;1;0
+1;Place Jean-Bart;St-Herblain;UGC;10;7;1;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;1;1;Caruso;Daniel John;3;padukone;deepika;serena unger;1;24/01/2017 20:00;1;2;Dupont;Marc;8;2;1;0
+1;Place Jean-Bart;St-Herblain;UGC;10;7;1;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;1;1;Caruso;Daniel John;4;wu;kris;nicks;1;24/01/2017 20:00;1;2;Dupont;Marc;8;2;1;0
+1;Place Jean-Bart;St-Herblain;UGC;10;7;1;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;1;1;Caruso;Daniel John;5;rose;ruby ;adele wofl;1;24/01/2017 20:00;1;2;Dupont;Marc;8;2;1;0
+1;Place Jean-Bart;St-Herblain;UGC;10;7;1;100;3;0;1;xXx: Reactivated;19/01/2017;110;Tout public;1;1;Caruso;Daniel John;6;McCann;rory ;tennyson torch;1;24/01/2017 20:00;1;2;Dupont;Marc;8;2;1;0
+2;Allée la Pérouse;St-Herblain;Pathé Gaumont;12;11;1;255;5;10;1;xXx: Reactivated;19/01/2017;110;Tout public;1;1;Caruso;Daniel John;1;diesel;vin;xander cage;2;27/01/2017 16:30;0;3;Dubois;Jeremie;15;2;0;2
+2;Allée la Pérouse;St-Herblain;Pathé Gaumont;12;11;1;255;5;10;1;xXx: Reactivated;19/01/2017;110;Tout public;1;1;Caruso;Daniel John;2;yan;donnie;xiang;2;27/01/2017 16:30;0;3;Dubois;Jeremie;15;2;0;2
+2;Allée la Pérouse;St-Herblain;Pathé Gaumont;12;11;1;255;5;10;1;xXx: Reactivated;19/01/2017;110;Tout public;1;1;Caruso;Daniel John;3;padukone;deepika;serena unger;2;27/01/2017 16:30;0;3;Dubois;Jeremie;15;2;0;2
+2;Allée la Pérouse;St-Herblain;Pathé Gaumont;12;11;1;255;5;10;1;xXx: Reactivated;19/01/2017;110;Tout public;1;1;Caruso;Daniel John;4;wu;kris;nicks;2;27/01/2017 16:30;0;3;Dubois;Jeremie;15;2;0;2
+2;Allée la Pérouse;St-Herblain;Pathé Gaumont;12;11;1;255;5;10;1;xXx: Reactivated;19/01/2017;110;Tout public;1;1;Caruso;Daniel John;5;rose;ruby ;adele wofl;2;27/01/2017 16:30;0;3;Dubois;Jeremie;15;2;0;2
+2;Allée la Pérouse;St-Herblain;Pathé Gaumont;12;11;1;255;5;10;1;xXx: Reactivated;19/01/2017;110;Tout public;1;1;Caruso;Daniel John;6;McCann;rory ;tennyson torch;2;27/01/2017 16:30;0;3;Dubois;Jeremie;15;2;0;2
+3;12 Place du Commerce;Nantes;Pathé Gaumont;8;1;0;345;10;10;2;Assassin's Creeds;21/12/2016;140;-12;1;2;Kurzel;Justin;7;fassbender;michael;cal lynch;3;10/01/2017 11:00;0;4;Morgan;philippe;16;1;0;2
+3;12 Place du Commerce;Nantes;Pathé Gaumont;8;1;0;345;10;10;2;Assassin's Creeds;21/12/2016;140;-12;1;2;Kurzel;Justin;7;fassbender;michael;aguilar de nerha;3;10/01/2017 11:00;0;4;Morgan;philippe;16;1;0;2
+3;12 Place du Commerce;Nantes;Pathé Gaumont;8;1;0;345;10;10;2;Assassin's Creeds;21/12/2016;140;-12;1;2;Kurzel;Justin;8;cotillard;marion;sofia;3;10/01/2017 11:00;0;4;Morgan;philippe;16;1;0;2
+3;12 Place du Commerce;Nantes;Pathé Gaumont;8;1;0;345;10;10;2;Assassin's Creeds;21/12/2016;140;-12;1;2;Kurzel;Justin;9;irons;jeremy;rikkin;3;10/01/2017 11:00;0;4;Morgan;philippe;16;1;0;2
+3;12 Place du Commerce;Nantes;Pathé Gaumont;8;1;0;345;10;10;2;Assassin's Creeds;21/12/2016;140;-12;1;2;Kurzel;Justin;10;gleeson;brendan;joseph lynch;3;10/01/2017 11:00;0;4;Morgan;philippe;16;1;0;2
+3;12 Place du Commerce;Nantes;Pathé Gaumont;8;1;0;345;10;10;2;Assassin's Creeds;21/12/2016;140;-12;1;2;Kurzel;Justin;11;rampling;charlotte;Ellen Kaye;3;10/01/2017 11:00;0;4;Morgan;philippe;16;1;0;2
+3;12 Place du Commerce;Nantes;Pathé Gaumont;8;1;0;345;10;10;2;Assassin's Creeds;21/12/2016;140;-12;1;2;Kurzel;Justin;12;labed;Ariane;Maria;3;10/01/2017 11:00;0;4;Morgan;philippe;16;1;0;2
+4;1ère Avenue des Droits de l'Homme;Angers;Pathé Gaumont;5;3;0;75;3;3;3;Lalaland;25/01/2017;125;Tout public;0;3;Chazelle;Damien;13;gosling;ryan;Sebastian;4;10/01/2017 22:00;0;5;David;jean;23;0;0;2
+4;1ère Avenue des Droits de l'Homme;Angers;Pathé Gaumont;5;3;0;75;3;3;3;Lalaland;25/01/2017;125;Tout public;0;3;Chazelle;Damien;14;stone;emma;Mia;4;10/01/2017 22:00;0;5;David;jean;23;0;0;2
+4;1ère Avenue des Droits de l'Homme;Angers;Pathé Gaumont;5;3;0;75;3;3;3;Lalaland;25/01/2017;125;Tout public;0;3;Chazelle;Damien;15;legend;john;Keith;4;10/01/2017 22:00;0;5;David;jean;23;0;0;2
+4;1ère Avenue des Droits de l'Homme;Angers;Pathé Gaumont;5;3;0;75;3;3;3;Lalaland;25/01/2017;125;Tout public;0;3;Chazelle;Damien;16;DeWitt;Rosemarie;Laura;4;10/01/2017 22:00;0;5;David;jean;23;0;0;2
+4;1ère Avenue des Droits de l'Homme;Angers;Pathé Gaumont;5;3;0;75;3;3;3;Lalaland;25/01/2017;125;Tout public;0;3;Chazelle;Damien;17;Wittrock;Finn;Greg;4;10/01/2017 22:00;0;5;David;jean;23;0;0;2
+4;1ère Avenue des Droits de l'Homme;Angers;Pathé Gaumont;5;3;0;75;3;3;3;Lalaland;25/01/2017;125;Tout public;0;3;Chazelle;Damien;18;Simmons;J.K;Bill;4;10/01/2017 22:00;0;5;David;jean;23;0;0;2

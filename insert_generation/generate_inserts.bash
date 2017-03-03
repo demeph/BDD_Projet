@@ -26,7 +26,7 @@ do
     position=$(head -n 1 tableau.csv | tr ';' '\n' | grep -n "^\s*$1\s*$" | cut -f1 -d:)
     if [ -z $position ]
     then
-        echo "error: unmatched attribute : $1"
+        >2& echo "error: unmatched attribute : $1"
         exit
     fi
     awk_accumulator="$awk_accumulator, \",\", \$$position"
@@ -39,4 +39,10 @@ awk_accumulator=${awk_accumulator:7:${#awk_accumulator}-1}
 #doing the crazy work
 awk_script="{print($awk_accumulator)}"
 tail -n +2 $fichier | awk -F ';' "$awk_script" | sort -u |\
-    sed -e "s/'/''/g" -e 's/\s\+,/,/g' -e "s/\([,(]\)\s*\([a-zA-Z][-a-zA-Z_'. ]*\)/\1 '\2'/g" -e "s/.*/INSERT INTO $table_name Values (&);/"
+    sed -e "s/'/''/g" \
+-e 's/\s\+,/,/g' \
+-e "s/\([,(]\)\s*\([a-zA-Z[:digit:]][-a-zA-Z_'. [:digit:]:/]*\)/\1 '\2'/g" \
+-e "s/'\([[:digit:]]\+\)'/\1/g" \
+-e "s/.*/INSERT INTO $table_name Values (&);/" \
+-e "s/'\([[:digit:]]\{2\}\/[[:digit:]]\{2\}\/[[:digit:]]\{4\}\)'/to_date(\1, 'DD\/MM\/YYYY')/g" \
+-e "s/'\([[:digit:]]\{2\}\/[[:digit:]]\{2\}\/[[:digit:]]\{4\} [[:digit:]]\{2\}:[[:digit:]]\{2\}\)'/to_date(\1, 'DD\/MM\/YYYY HH24:MI')/g"
