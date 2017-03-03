@@ -8,4 +8,4 @@ IMPORTANT
 aussi, on enlève idCine comme PK dans Seance car sinon il faut la rajotuer dans résa sinon on a pas de moyen de faire une FK. Du coup on l'enlève de PK.
 
 03/03
-En reflechissant sur le type de variable l'horaire on s'est rendu compte que au lieu d'avoir deux variable même type dateProjection et horaire ce serait mieux d'avoir une seul variable qui contient à la fois date et heure de la projection. En plus on a toujours la possiblité de comparer car cette format de date nous permet
+En reflechissant sur le type de variable l'horaire on s'est rendu compte que au lieu d'avoir deux variable même type dateProjection et horaire ce serait mieux d'avoir une seul variable qui contient à la fois date et heure de la projection. En plus on a toujours la possiblité de comparer car cette format de date nous permet.
