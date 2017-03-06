@@ -1,0 +1,12 @@
+3 roles definit :
+ - lesclients :
+	- selection sur la relation Seance,Cinema,Film
+ - guichetier : 
+	- selection sur la reservation,  Seance
+	- modif sur la reservation 
+	- select et modif sur client
+ - lesgerantsFilm :
+	- select sur film et salle
+	- select, modif seance 
+
+
