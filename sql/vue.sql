@@ -1,0 +1,9 @@
+DROP VIEW SeanceAVenir;
+
+CREATE VIEW SeanceAVenir AS
+SELECT *
+FROM Seance
+WHERE dateProjection >= SYSDATE;
+
+
+CREATE OR REPLACE 
