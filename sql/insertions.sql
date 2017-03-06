@@ -1,26 +1,26 @@
-DROP films_seq;
+DROP SEQUENCE films_seq;
 CREATE SEQUENCE films_seq start with 0 increment by 1 minvalue 0;
 
 INSERT INTO Film Values (films_seq.nextval, 'xXx: Reactivated', to_date('19/01/2017', 'DD/MM/YYYY'), 'Tout public', 110, 1, 1);
 INSERT INTO Film Values (films_seq.nextval, 'Assassin''s Creeds', to_date('21/12/2016', 'DD/MM/YYYY'), -12, 140, 2, 1);
 INSERT INTO Film Values (films_seq.nextval, 'Lalaland', to_date('25/01/2017', 'DD/MM/YYYY'), 'Tout public', 125, 3, 0);
 
-DROP cine_seq;
+DROP SEQUENCE cine_seq;
 CREATE SEQUENCE cine_seq start with 0 increment by 1 minvalue 0;
 
 INSERT INTO Cinema Values (cine_seq.nextval, 'St-Herblain', 'Place Jean-Bart', 'UGC', 10);
-INSERT INTO Cinema Values (cine_seq.nextval, 'St-Herblain', 'Allée la Pérouse', 'Pathé Gaumont', 12);
-INSERT INTO Cinema Values (cine_seq.nextval, 'Nantes', '12 Place du Commerce', 'Pathé Gaumont', 8);
-INSERT INTO Cinema Values (cine_seq.nextval, 'Angers', '1ère Avenue des Droits de l''Homme', 'Pathé Gaumont', 5);
+INSERT INTO Cinema Values (cine_seq.nextval, 'St-Herblain', 'Allée la Perouse', 'Pathe Gaumont', 12);
+INSERT INTO Cinema Values (cine_seq.nextval, 'Nantes', '12 Place du Commerce', 'Pathe Gaumont', 8);
+INSERT INTO Cinema Values (cine_seq.nextval, 'Angers', '1ère Avenue des Droits de l''Homme', 'Pathe Gaumont', 5);
 
-DROP real_seq;
+DROP SEQUENCE real_seq;
 CREATE SEQUENCE real_seq start with 0 increment by 1 minvalue 0;
 
 INSERT INTO Realisateur Values (real_seq.nextval, 'Caruso', 'Daniel John');
 INSERT INTO Realisateur Values (real_seq.nextval, 'Kurzel', 'Justin');
 INSERT INTO Realisateur Values (real_seq.nextval, 'Chazelle', 'Damien');
 
-DROP clients_seq;
+DROP SEQUENCE clients_seq;
 CREATE SEQUENCE clients_seq start with 0 increment by 1 minvalue 0;
 
 INSERT INTO Client Values (clients_seq.nextval, 'Martin', 'herve');
@@ -29,7 +29,7 @@ INSERT INTO Client Values (clients_seq.nextval, 'Dubois', 'Jeremie');
 INSERT INTO Client Values (clients_seq.nextval, 'Morgan', 'philippe');
 INSERT INTO Client Values (clients_seq.nextval, 'David', 'jean');
 
-DROP acteur_seq;
+DROP SEQUENCE acteur_seq;
 CREATE SEQUENCE acteur_seq start with 0 increment by 1 minvalue 0;
 
 INSERT INTO Acteur Values (acteur_seq.nextval, 'diesel', 'vin');
@@ -71,7 +71,7 @@ INSERT INTO Casting Values (3, 'Laura', 16);
 INSERT INTO Casting Values (3, 'Mia', 14);
 INSERT INTO Casting Values (3, 'Sebastian', 13);
 
-DROP seance_seq;
+DROP SEQUENCE seance_seq;
 CREATE SEQUENCE seance_seq start with 0 increment by 1 minvalue 0;
 
 INSERT INTO Seance Values (seance_seq.nextval, 1, 1, to_date('24/01/2017 20:00', 'DD/MM/YYYY HH24:MI'), 7, 1);

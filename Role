@@ -1,0 +1,5 @@
+3 roles definit :
+ - lesclients
+	- selection sur la relation Seance,Cinema
+ - guichetier
+ - gerantFilm
