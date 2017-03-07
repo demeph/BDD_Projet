@@ -69,7 +69,6 @@ numSalle INTEGER,
 diffusionEn3D INTEGER check (diffusionEn3D = 0 or diffusionEn3D = 1)
 );
 
-
 CREATE TABLE Reservation
 (
 idClient INTEGER REFERENCES Client,
