@@ -20,3 +20,4 @@ EXCEPTION
 		raise_application_error(-20007,'la salle doit être compatible en 3D');
 END;
 /
+show error;
