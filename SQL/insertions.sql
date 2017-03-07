@@ -77,8 +77,8 @@ INSERT INTO Casting Values (3, 'Mia', 14);
 INSERT INTO Casting Values (3, 'Sebastian', 13);
 
 DROP SEQUENCE seance_seq;
-CREATE SEQUENCE seance_seq start with 0 increment by 1 minvalue 0;
---CREATE SEQUENCE seance_seq start with 1 increment by 1;
+--CREATE SEQUENCE seance_seq start with 0 increment by 1 minvalue 0;
+CREATE SEQUENCE seance_seq start with 1 increment by 1;
 
 INSERT INTO Seance Values (seance_seq.nextval, 1, 1, to_date('24/01/2017 20:00', 'DD/MM/YYYY HH24:MI'), 7, 1);
 INSERT INTO Seance Values (seance_seq.nextval, 2, 1, to_date('27/04/2017 16:30', 'DD/MM/YYYY HH24:MI'), 11, 0);
