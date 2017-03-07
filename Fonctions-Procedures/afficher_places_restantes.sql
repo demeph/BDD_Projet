@@ -12,6 +12,7 @@ SELECT SUM(nbPlaceStandardRes) INTO res_std,
        SUM(nbPlaceDboxRes) INTO res_dbox
 FROM Reservation
 WHERE idSeance = id_seance;
+
 SELECT nbPlaceStandard INTO capacite_std,
        nbPlaceHandicape INTO capacite_handi,
        nbPlaceDbox INTO capacite_dbox

@@ -1,0 +1,2 @@
+La trigger verif3D à pour rôle de s'assurer qu'une séance diffusée en 3D est projetée dans une salle compatible avec la projection en 3D.
+Une exception est levée si la séance est en 3D mais que la salle n'est pas compatible 3D. Ainsi, une salle compatible 3D peut parfaitement projeter des films non 3D.
