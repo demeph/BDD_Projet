@@ -81,9 +81,9 @@ CREATE SEQUENCE seance_seq start with 0 increment by 1 minvalue 0;
 --CREATE SEQUENCE seance_seq start with 1 increment by 1;
 
 INSERT INTO Seance Values (seance_seq.nextval, 1, 1, to_date('24/01/2017 20:00', 'DD/MM/YYYY HH24:MI'), 7, 1);
-INSERT INTO Seance Values (seance_seq.nextval, 2, 1, to_date('27/01/2017 16:30', 'DD/MM/YYYY HH24:MI'), 11, 0);
-INSERT INTO Seance Values (seance_seq.nextval, 3, 2, to_date('10/01/2017 11:00', 'DD/MM/YYYY HH24:MI'), 1, 0);
-INSERT INTO Seance Values (seance_seq.nextval, 4, 3, to_date('10/01/2017 22:00', 'DD/MM/YYYY HH24:MI'), 3, 0);
+INSERT INTO Seance Values (seance_seq.nextval, 2, 1, to_date('27/04/2017 16:30', 'DD/MM/YYYY HH24:MI'), 11, 0);
+INSERT INTO Seance Values (seance_seq.nextval, 3, 2, to_date('10/05/2017 11:00', 'DD/MM/YYYY HH24:MI'), 1, 0);
+INSERT INTO Seance Values (seance_seq.nextval, 4, 3, to_date('10/05/2017 22:00', 'DD/MM/YYYY HH24:MI'), 3, 0);
 
 INSERT INTO Reservation Values (1, 1, 4, 0, 2, 0);
 INSERT INTO Reservation Values (2, 1, 8, 1, 2, 0);
