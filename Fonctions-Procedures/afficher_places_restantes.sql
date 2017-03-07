@@ -29,3 +29,5 @@ DBMS_OUTPUT.PUT_LINE('places restantes :\n\t-'
 END;
 /
         
+exec afficher_places_restantes(1);
+exec afficher_places_restantes(2);
