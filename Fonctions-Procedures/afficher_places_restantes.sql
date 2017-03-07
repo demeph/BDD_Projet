@@ -1,18 +1,17 @@
-CREATE OR REPLACE PROCEDURE afficher_places_restantes(id_seance IN integer) 
+CREATE OR REPLACE PROCEDURE afficher_places_restantes(id_seance IN INTEGER) 
 IS
-res_std integer;
-res_handi integer;
-res_dbox integer;
-capacite_std integer;
-capacite_handi integer;
-capacite_dbox integer;
+res_std INTEGER;
+res_handi INTEGER;
+res_dbox INTEGER;
+capacite_std INTEGER;
+capacite_handi INTEGER;
+capacite_dbox INTEGER;
 BEGIN
-SELECT sum(nbPlaceStandardRes) INTO res_std,
-       sum(nbPlaceHandicapeRes) INTO res_handi,
-       sum(nbPlaceDboxRes) INTO res_dbox
+SELECT SUM(nbPlaceStandardRes) INTO res_std,
+       SUM(nbPlaceHandicapeRes) INTO res_handi,
+       SUM(nbPlaceDboxRes) INTO res_dbox
 FROM Reservation
 WHERE idSeance = id_seance;
-        
 SELECT nbPlaceStandard INTO capacite_std,
        nbPlaceHandicape INTO capacite_handi,
        nbPlaceDbox INTO capacite_dbox
@@ -25,6 +24,8 @@ DBMS_OUTPUT.PUT_LINE('places restantes :\n\t-'
                     || 'places standard\n\t-'
                     || capacite_handi - res_handi
                     || 'places handicapée\n\t-'
-                    || capacite_dbox - res_dbox);
+                    || capacite_dbox - res_dbox
+                    || 'places dbox');
 END;
-/   
+/
+        
