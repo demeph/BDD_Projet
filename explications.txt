@@ -1,0 +1,13 @@
+Vue seanceAVenir :
+comme son nom l'indique cette vue nous permet de faire un zoom sur les séances qui n'ont pas encore eu lieu. On récupère donc tout sur la table Seance avec pour condition d'avoir une date ultérieure à la date actuelle.
+
+Cette vue nous a été utile dans le cadre d'une fonction de reservation :
+notre 
+reservationClient prend en paramètre un nom, un prénom et une séance ainsi que le nombre de places qu'on veut réserver.
+Comme quand on va au cinéma si on veut réserver on précise combien de places on prend. Le nom et le prénom nous servent à savoir si le Client est déjà dans la base ou non. On a donc deux cas : déjà on veut savoir si on peut réserver c'est à dire qu'on se sert de notre vue : on regarde si la séance est bien à venir et qu'elle n'est pas déjà passée. Une fois que c'est fait on regarde si le client est dans la base : si il l'est on ajoute directement sa réservation, sinon on l'ajoute dans la base et on fait ensuite sa réservation.
+
+
+
+verifPlace :
+
+Avant d'insérer ou de faire une modification sur Reservations on vérifie que on excède pas la capacité de la salle. On va donc calculer toutes les places qui sont reservées, on additionne le nombre de places déjà reservées avec le nombre de places qu'on veut réserver et si on excède la capacité de la salle alors on lève une exception suivant le nombre de place qui pose problème. En effet, on distingue chaque type de place, une personne peut réserver 10 places standardes et 1 dbox, si il y a 0dbox mais 50 standards il faut lui dire que il n'y a pas assez de dbox mais assez de standard.
