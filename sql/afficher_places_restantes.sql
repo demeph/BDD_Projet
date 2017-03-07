@@ -25,6 +25,8 @@ BEGIN
                            || 'places standard\n\t-'
                            || capacite_handi - res_handi
                            || 'places handicapée\n\t-'
-                           || capacite_dbox - res_dbox);
-END\;
+                           || capacite_dbox - res_dbox
+                           || 'places dbox');
+END;
+/
         
