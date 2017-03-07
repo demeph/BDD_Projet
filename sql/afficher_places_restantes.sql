@@ -27,5 +27,6 @@ BEGIN
                            || 'places handicapée\n\t-'
                            || capacite_dbox - res_dbox
                            || 'places dbox');
-END\;
+END;
+/
         
