@@ -49,3 +49,10 @@ INSERT INTO Seance Values (seance_seq.nextval, 1, 1, to_date('03/03/2018 23:59',
 --DBMS_OUTPUT.PUT_LINE('insertion ok');
 --Application error
 INSERT INTO Seance Values (seance_seq.nextval, 3, 1, to_date('03/03/2018 23:59', 'DD/MM/YYYY HH24:MI'), 1,1);
+
+--verification du fonctionnement de la procedure affichPlaces
+--le cas où ca marche
+exec affichPlaces(1);
+exec affichPlaces(2);
+--le cas ou ca va donner erreur
+exec affichPlaces(99999);
