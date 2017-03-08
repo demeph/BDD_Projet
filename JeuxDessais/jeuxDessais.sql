@@ -17,8 +17,8 @@ INSERT INTO Seance Values (seance_seq.nextval, 1, 1, to_date('24/07/2017 18:00',
 INSERT INTO Seance Values (seance_seq.nextval, 2, 3, to_date('15/04/2017 16:30', 'DD/MM/YYYY HH24:MI'), 11, 0);
 --DBMS_OUTPUT.PUT_LINE("insertion ok");
 --violation de contrainte
-INSERT INTO Seance Values (seance_seq.nextval, 1, 1, to_date('24/07/2017 18:00', 'DD/MM/YYYY HH24:MI'), 7, 1);
-INSERT INTO Seance Values (seance_seq.nextval, 2, 3, to_date('15/04/2017 16:30', 'DD/MM/YYYY HH24:MI'), 11, 0);
+INSERT INTO Seance Values (seance_seq.nextval, 1, 1, to_date('25/07/2017 18:00', 'DD/MM/YYYY HH24:MI'), 7, 23);
+INSERT INTO Seance Values (seance_seq.nextval, 2, 3, to_date('17/04/2017 16:30', 'DD/MM/YYYY HH24:MI'), 11, -54);
 
 
 -- Verification des contraintes sur la relation Salle
@@ -41,11 +41,11 @@ exec reservationClient('Dupont', 'Felix', 4, 1, 0, 0);
 --Application error sur nb place Dbox
 exec reservationClient('Martin', 'Clement', 4, 0,0 , 3); 
 --Application error sur nb place Standard
-exec reservationClient('Martin', 'Martin', 4, 0,3, 0); 
+exec reservationClient('Martin', 'Martin', 4, 0,16, 0); 
 
 
 --Verification du fonctionnement des triggers verif3D
 INSERT INTO Seance Values (seance_seq.nextval, 1, 1, to_date('03/03/2018 23:59', 'DD/MM/YYYY HH24:MI'), 7, 0);
 --DBMS_OUTPUT.PUT_LINE('insertion ok');
 --Application error
-INSERT INTO Seance Values (seance_seq.nextval, 1, 1, to_date('03/03/2018 23:59', 'DD/MM/YYYY HH24:MI'), 7, 1);
+INSERT INTO Seance Values (seance_seq.nextval, 3, 1, to_date('03/03/2018 23:59', 'DD/MM/YYYY HH24:MI'), 1,1);
