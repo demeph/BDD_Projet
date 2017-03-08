@@ -31,11 +31,18 @@ DBMS_OUTPUT.PUT_LINE("insertion ok");
 INSERT INTO Salle Values (1, 4, -1, 5, 55, 10);
 INSERT INTO Salle Values (1, 3, 3, 5, 55, 10);
 
---Verification du fonctionnement des triggers en utilisant la procedure reservationClient
+--Verification du fonctionnement des triggers verifPlace en utilisant la procedure reservationClient
 --Tous les reservations vont bien passé 
 exec reservationClient('Martin', 'Jean', 4, 2, 20, 0);
 exec reservationClient('Dupont', 'Marc', 4, 0, 15, 0);
 exec reservationClient('Piere', 'Jean', 4, 1, 28, 1); 
-exec reservationClient('Piere', 'Jean', 4, 1, 28, 1); 
+--Application error sur nb place Handicape
+exec reservationClient('Dupont', 'Felix', 4, 1, 0, 0); 
+--Application error sur nb place Dbox
+exec reservationClient('Martin', 'Clement', 4, 0,0 , 3); 
+--Application error sur nb place Standard
+exec reservationClient('Martin', 'Martin', 4, 0,3, 0); 
 
+
+--Verification du fonctionnement des triggers verif3D
 

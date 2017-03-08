@@ -45,13 +45,10 @@ BEGIN
 Exception
 	when pas_assez_Place then
 		RAISE_APPLICATION_ERROR(-20002, 'pas assez place standard');
-		--DBMS_OUTPUT.PUT_LINE('pas assez place standard');
 	when pas_assez_Place_Hand then
 		RAISE_APPLICATION_ERROR(-20004, 'pas assez place handicape');
-		--DBMS_OUTPUT.PUT_LINE('pas assez place handicape');
 	when pas_assez_Place_dBox then
 		RAISE_APPLICATION_ERROR(-20005, 'pas assez place dBOX');
-		/*DBMS_OUTPUT.PUT_LINE('pas assez place dBox');*/
 END;
 /
 show error;
