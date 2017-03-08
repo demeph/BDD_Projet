@@ -1,5 +1,3 @@
 cette fonction prends en paramètre l'id d'une séance et affiche le nombre de places standard, handicapé et dbox restantes. Elle pourrait être utile à un guichetier voulant s'assurer que les places qu'il s'apprête à vendre sont bel et bien disponibles.
-Dans un premier temps, cette fonction calcule pour chaque type de place :
-     - le nombre ayant été réservé pour la séance fournie en paramètre
-     - le nombre de places dans la salle dans laquelle la séance a lieu (la capacité de la salle)
+Dans un premier temps, cette fonction calcule pour chaque type de place : le nombre ayant été réservé pour la séance fournie en paramètre; le nombre de places dans la salle dans laquelle la séance a lieu (la capacité de la salle).
 Le nombre de place restante est la capacité à laquelle on soustrait le nombre de places réservées.

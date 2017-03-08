@@ -1,7 +1,7 @@
 10/02
-chazngement de card entre casting et film parce que en fait casting c'est une table role donc à un film on^peut avoir plusieurs roles.
+changement de card entre casting et film parce que en fait casting c'est une table role donc à un film on peut avoir plusieurs roles.
 
-changemetn de card entre reserv et seance on met 1 n car une seance peut avoir plusieurs résas.
+changement de card entre reserv et seance on met 1 n car une seance peut avoir plusieurs résas.
 
 IMPORTANT
 

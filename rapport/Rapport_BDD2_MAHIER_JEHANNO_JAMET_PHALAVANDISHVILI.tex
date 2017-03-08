@@ -59,7 +59,7 @@
 		
 		Dans le cadre de ce projet nous devons créer une base de données. Nous avons décidé de modéliser la gestion de cinémas sur une grande échelle. Par exemple nous voulons savoir quels sont les cinémas de France, à qui ils appartiennent (Pathé,UGC, etc.) et ce qu'ils proposent. Comme notre modèle se base sur une certaine réalité, voici comment nous avons décomposé la chose, prenons  l'exemple d'un cinéma : \\
 		\indent Le cinéma Pathé à Atlantis, dans la ville de Nantes. Tout d'abord on voit que un cinéma est identifié par une adresse et une ville. Ensuite, notre cinéma possède des salles dans lesquelles seront diffusés des films. Chaque film est composé d'une équipe d'acteurs, d'un réalisateur et d'une date de sortie. Il peut être compatible ou non avec la 3D. \\ 				
-		\indent En ce qui concerne nos salles, elles possèdent un certain nombre de places qui sont réparties entre les places ''standards'', les places ''handicapés'' ainsi que les nouveaux sièges dBox (sièges bougeant en même temps que le film). Si elles sont compatibles, elles ont la possibilité de diffuser en 3D. \\
+		\indent En ce qui concerne nos salles, elles possèdent un certain nombre de places qui sont réparties entre les places ''standard'', les places ''handicapés'' ainsi que les nouveaux sièges dBox (sièges bougeant en même temps que le film). Si elles sont compatibles, elles ont la possibilité de diffuser en 3D. \\
 		\indent Une séance dans un cinéma donné correspond à une date de projection d'un certain film dans une salle spécifique à un horaire précis, le film étant diffusé ou non en 3D. Aujourd'hui si on va au cinéma il est possible de réserver sa séance, autrement dit, on réserve un certain nombre de places pour un film, à un horaire précis, dans un cinéma donné. 
 
 		\vspace{0.5cm}
@@ -427,53 +427,171 @@
 
 				\vspace{0.5cm}
 
+				Suite au dépôt de la première partie du projet concernant principalement nos tables, nous avons remarqué quelques incohérences. Nous allons commencer cette deuxième partie du rapport par corriger ces défauts, ainsi nous pourrons continuer sur une base saine. Tout d'abord, avec le schéma précédemment obtenu, un film ne pouvait avoir plusieurs rôles, ce qui est incorrect. Nous avons donc rectifiés la cardinalité entre les tables Casting et Film. D'autre part, nous avions un problème similaire entre les tables Séance et Réservation. En effet on ne pouvait avoir qu'une réservation par séance. 
+				\indent Ensuite, et c'est peut-être le problème majeur, nous avions une incohérence au niveau de nos clés primaires pour la table Séance, ce qui bloquait la jointure naturel entre Séance et Réservation. Comme idCine était clé primaire dans Séance, il aurait fallu ajouter dans Réservation la clé idCine pour pouvoir faire une jointure naturel. Cependant, nous avons préféré enlever idCine de la clé primaire de la table Réservation, pour la raison que nous ne voulons pas qu'une réservation soit propre au cinéma, mais globale. 
+				\indent Enfin, en réfléchissant sur le type de variable de l'attribut horaire, on s'est rendu compte que le type "TIME" était obsolète. Ainsi, au lieu d'avoir deux variables dateProjection et horaire, nous avons décidé d'avoir une seule variable qui contient à la fois la date et l'heure de la projection. Aussi nous avons toujours la possibilité de faire des comparaisons car ce format de date nous le permet. \\
+				
+				Voici le nouveau diagramme UML : \\
+
+				\newpage
+				
+					\begin{figure}[!h]		
+						\hspace{-1cm}
+						{\includegraphics[height=12cm]{picture/DiagrammeUML_corrige.png}}
+						\caption{Nouveau diagramme UML de nos tables}
+						\label{UML}
+						\vspace{0.5cm}	
+					\end{figure}
+		
+				\vspace{0.5cm}
+					
 		\subsection{Répartition des tâches}
 
 				\vspace{0.5cm}
 
-		\subsection{SQL}
+				Au début, nous nous sommes réunis tous les quatre pour discuter des problèmes qui se posaient suite à la première partie et apporter les modifications nécessaires (voir ci-dessus). Ensuite, on s'est répartis les tâches comme suit : Demetre a travaillé sur les triggers, Loïc a fait les vues et une procédure à l'aide de Clément et enfin, Félix a fait les insertions de tuples ainsi qu'une procédure. Pour finir, Loïc et Clément ont rédigés le rapport pendant que Demetre et Félix faisaient les jeux d'essais.
+
+
+		\subsection{Explications}
 
 				\vspace{0.5cm}
 
-		\subsection{Conclusion}
-
-				\vspace{0.5cm}
-
-			\section{Annexe}
-							
-				\begin{figure}[!h]		
-					\centering
-					\rotatebox{90}{\includegraphics[height=8cm]{picture/table_p1_rogne.png}}
-					\caption{Première partie de notre table contenant tous les attributs et quelques tuples}
-					\label{table_p1}	
-				\end{figure}			
-
-				\begin{figure}[!h]
-					\centering						
-					\rotatebox{90}{\includegraphics[height=8cm]{picture/table_p2_rogne.png}}
-					\caption{Deuxième partie de notre table contenant tous les attributs et quelques tuples}
-					\label{table_p2}	
-				\end{figure}			
-
-				\begin{figure}[!h]
-					\centering						
-					\rotatebox{90}{\includegraphics[height=9cm]{picture/table_p3_rogne.png}}
-					\caption{Troisième partie de notre table contenant tous les attributs et quelques tuples}
-					\label{table_p3}	
-				\end{figure}	
-
-				\begin{figure}[!h]
-					\centering						
-					\rotatebox{90}{\includegraphics[height=10cm]{picture/table_p4_rogne.png}}
-					\caption{Quatrième partie de notre table contenant tous les attributs et quelques tuples}
-					\label{table_p4}	
-				\end{figure}
+				\subsubsection{Les triggers}
 				
-				\begin{figure}[!h]
-					\centering						
-					\rotatebox{90}{\includegraphics[height=12cm]{picture/graphe_dependances.png}}
-					\caption{Graphe des dépendances}
-					\label{graphe_dependances}	
-				\end{figure}	
+					\vspace{0.5cm}
+
+					\begin{enumerate}[label=\ding{228}]
+					
+						\item verif3D : \\
+						
+							Le trigger verif3D a pour rôle de s'assurer qu'une séance diffusée en 3D est projetée dans une salle compatible avec la projection en 3D. Une exception est levée si la séance est en 3D mais que la salle n'est pas compatible 3D. Ainsi, une salle compatible 3D peut parfaitement projeter des films non 3D.\\
+											
+						\item verifPlace: \\
+						
+							Avant d'insérer ou de faire une modification sur Reservation on vérifie qu'on excède pas la capacité de la salle. On va donc calculer toutes les places qui sont réservées, on additionne le nombre de places déjà réservées avec le nombre de places qu'on veut réserver et si on excède la capacité de la salle alors on lève une exception suivant le nombre de place qui pose problème. En effet, on distingue chaque type de place, une personne peut réserver 10 places standard et 1 place dbox, si il y a 0 place dbox mais 50 places standard il faut lui dire qu'il n'y a pas assez de places dbox mais assez de places standard.\\
+						
+					\end{enumerate}
+
+				\subsubsection{Les vues}
+				
+					\vspace{0.5cm}
+
+					\begin{enumerate}[label=\ding{228}]
+
+						\item seanceDisponible: \\
+						
+							Cette vue a été pensée pour le client, en effet elle indique les séances disponibles à partir de la date du système pour lesquelles il reste encore des places à réserver. Ainsi elle retourne le titre du film, la date de projection, le nom du cinéma et la salle. \\
+												
+						\item seanceAVenir : \\
+						
+						Cette vue nous permet de faire un zoom sur les séances qui n'ont pas encore eu lieu. On récupère donc tout sur la table Seance avec pour condition d'avoir une date ultérieure à la date actuelle. Cette vue nous a été utile dans le cadre d'une fonction de réservation.\\
+																	
+					\end{enumerate}					
+								
+				\subsubsection{Les procédures}
+				
+					\vspace{0.5cm}
+
+					\begin{enumerate}[label=\ding{228}]
+
+						\item reservationClient: \\
+						
+							La procédure reservationClient prend en paramètre un nom, un prénom et une séance ainsi que le nombre de places qu'on veut réserver. Comme quand on va au cinéma, si on veut réserver on précise combien de places on prend. Le nom et le prénom nous servent à savoir si le Client est déjà dans la base ou non. On a donc deux tests : déjà on veut savoir si on peut réserver c'est ici qu'on se sert de notre vue : on regarde si la séance est bien à venir et qu'elle n'est pas déjà passée. Une fois que c'est fait on regarde si le client est dans la base : si il l'est, on récupère son id et on ajoute directement sa réservation, sinon on l'ajoute dans la base des clients et on fait ensuite sa réservation avec le nouvel identifiant que l'on vient de lui attribuer.\\
+												
+						\item affichPlaces : \\
+						
+							Cette fonction prend en paramètre l'identifiant d'une séance et affiche le nombre de places standard, handicapé et dbox restantes. Elle pourrait être utile à un guichetier voulant s'assurer que les places qu'il s'apprête à vendre sont disponibles. Dans un premier temps, cette fonction calcule pour chaque type de place : le nombre ayant été réservé pour la séance fournie en paramètre et le nombre de places dans la salle dans laquelle la séance a lieu (la capacité de la salle). Le nombre de places restante est la capacité de la salle à laquelle on soustrait le nombre de places réservées.\\
+																	
+					\end{enumerate}
+
+				\subsubsection{Les droits}
+				
+					\vspace{0.5cm}
+					
+					Avant toute chose, on se place dans un contexte d'utilisation externe de la base de données, par exemple dans le cas où nous arrivons à un cinéma et nous pouvons donc consulter une programmation ou traiter avec des guichetiers. \\ 
+
+					\begin{enumerate}[label=\ding{228}]
+
+						\item lesClients : \\
+						
+							On simule ici les droits que possède un client, ou plus simplement un utilisateur du site web. Le client aura seulement les droits de lecture sur la table ainsi il pourra rechercher le titre d'un film ou bien même un cinéma. Ils ont donc un accès en lecture sur les tables Seance, Cinema et Film.\\
+																		
+						\item lesGuichetiers : \\
+						
+							Nos guichetiers sont ceux qui vont réserver les places ils ont donc un accès en lecture sur les tables Seance et Reservation mais aussi un droit de modification (en écriture) sur Reservation. Cependant, il doit vérifier si le client est dans la base donc on lui permet aussi un droit de sélection sur la table Client, si il n'y est pas il peut l'ajouter donc on lui donne un droit de modification.\\
+						
+						\item lesGerantsFilm : \\
+							
+							Les gérants des films et donc de la programmation vont agencer les films et les séances pour le cinéma. Ils ont un droit de lecture sur les films et les salles mais aussi de modification sur les séances. Ainsi ils peuvent créer leurs séances pour gérer leur cinéma.\\
+																													
+					\end{enumerate}
+					
+				\subsubsection{Les index}
+				
+					\vspace{0.5cm}
+					
+					Les clés primaires étant déjà indexées par défaut, nous avons rajouté deux index d'attributs non primaires qui nous semblaient utiles. Cette fois ci, on se place dans le cas d'un client qui fait une recherche sur internet. \\ 					
+					
+					\begin{enumerate}[label=\ding{228}]
+
+						\item nomFilm : \\
+						
+							La plupart des clients savent quel film ils vont voir, ils cherchent donc à savoir où et quand est diffusé ce film. Ceci est un exemple pour montrer que l'attribut titre est un attribut qui sera beaucoup sollicité, son indexation permettra donc de gagner du temps sur nos requêtes et donc que la recherche du client soit plus rapide.\\
+																		
+						\item ville : \\
+						
+							De même, il nous semble pertinent de savoir quels cinémas se trouvent dans notre ville.					
+																													
+					\end{enumerate}
+										
+		\subsection{Atouts, améliorations envisageables et critique}
+				
+			\vspace{0.5cm}
+					
+			
+														
+	\section{Conclusion}
+
+			\vspace{0.5cm}
+
+
+
+
+	\section{Annexe}
+					
+		\begin{figure}[!h]		
+			\centering
+			\rotatebox{90}{\includegraphics[height=8cm]{picture/table_p1_rogne.png}}
+			\caption{Première partie de notre table contenant tous les attributs et quelques tuples}
+			\label{table_p1}	
+		\end{figure}			
+
+		\begin{figure}[!h]
+			\centering						
+			\rotatebox{90}{\includegraphics[height=8cm]{picture/table_p2_rogne.png}}
+			\caption{Deuxième partie de notre table contenant tous les attributs et quelques tuples}
+			\label{table_p2}	
+		\end{figure}			
+
+		\begin{figure}[!h]
+			\centering						
+			\rotatebox{90}{\includegraphics[height=9cm]{picture/table_p3_rogne.png}}
+			\caption{Troisième partie de notre table contenant tous les attributs et quelques tuples}
+			\label{table_p3}	
+		\end{figure}	
+
+		\begin{figure}[!h]
+			\centering						
+			\rotatebox{90}{\includegraphics[height=10cm]{picture/table_p4_rogne.png}}
+			\caption{Quatrième partie de notre table contenant tous les attributs et quelques tuples}
+			\label{table_p4}	
+		\end{figure}
+		
+		\begin{figure}[!h]
+			\centering						
+			\rotatebox{90}{\includegraphics[height=12cm]{picture/graphe_dependances.png}}
+			\caption{Graphe des dépendances}
+			\label{graphe_dependances}	
+		\end{figure}	
 					
 \end{document}
