@@ -45,4 +45,7 @@ exec reservationClient('Martin', 'Martin', 4, 0,3, 0);
 
 
 --Verification du fonctionnement des triggers verif3D
-
+INSERT INTO Seance Values (seance_seq.nextval, 1, 1, to_date('03/03/2018 23:59', 'DD/MM/YYYY HH24:MI'), 7, 0);
+DBMS_OUTPUT.PUT_LINE('insertion ok');
+--Application error
+INSERT INTO Seance Values (seance_seq.nextval, 1, 1, to_date('03/03/2018 23:59', 'DD/MM/YYYY HH24:MI'), 7, 1);

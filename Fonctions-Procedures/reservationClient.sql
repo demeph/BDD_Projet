@@ -22,7 +22,7 @@ ELSE
 	RAISE seancePasse;
 END IF;
 EXCEPTION
-WHEN seancePasse THEN RAISE_APPLICATION_ERROR(-20001, 'Vous essayez de reserver une seance passee');
+WHEN seancePasse THEN RAISE_APPLICATION_ERROR(-20001, 'Vous essayez de reserver une seance passee ou seance n''existe pas');
 END;
 /
 show error;
