@@ -50,7 +50,5 @@ WHEN seanceInexistante THEN RAISE_APPLICATION_ERROR(-20001, 'La seance ' || TO_C
 END;
 /
 
-show errors
-exec affichPlaces(1);
-exec affichPlaces(2);
+show errors;
 set serveroutput off;
