@@ -1,23 +1,27 @@
-drop role lesclients;
-create role lesclients;
+drop role lesClients;
+create role lesClients;
 
-grant select on Film to lesclients;
-grant select on Seance to lesclients;
-grant select on Cinema to lesclients;
-grant select on Casting to lesclients;
-grant select on Realisateur to lesclients;
-grant select on Acteur to lesclients;
+grant select on Film to lesClients;
+grant select on Seance to lesClients;
+grant select on Cinema to lesClients;
+grant select on Casting to lesClients;
+grant select on Realisateur to lesClients;
+grant select on Acteur to lesClients;
 
-drop role lesguichetiers;
-create role lesguichetiers;
+drop role lesGuichetiers;
+create role lesGuichetiers;
 
-grant select,insert,update,delete on Reservation to lesguichetiers;
-grant select,insert,update on Client to lesguichetiers;
-grant select on Seance to lesguichetiers;
+grant select,insert,update,delete on Reservation to lesGuichetiers;
+grant select,insert,update on Client to lesGuichetiers;
+grant select on Seance to lesGuichetiers;
 
-drop role lesgerantsFilm;
-create role lesgerantsFilm;
+drop role lesGerantsFilm;
+create role lesGerantsFilm;
 
-grant select on Film to lesgerantsFilm;
-grant select on Salle to lesgerantsFilm;
-grant select,insert,update,delete on Seance to lesgerantsFilm;
+grant select on Film to lesGerantsFilm;
+grant select on Salle to lesGerantsFilm;
+grant select,insert,update,delete on Seance to lesGerantsFilm;
+
+grant lesClients to L3_33;
+grant lesGuichetiers to L3_30;
+grant lesGerantsFilm to L3_9;

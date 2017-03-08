@@ -3,7 +3,7 @@
 @Vues/seanceAVenir
 @Vues/seanceDisponible
 @Role/role
-@Fonctions-Procedures/affichPlaces
-@Fonctions-Procedures/reservationClient
+@Fonctions/affichPlaces
+@Fonctions/reservationClient
 @Triggers/verif3D
 @Triggers/verifPlace
