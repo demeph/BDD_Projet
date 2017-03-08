@@ -85,11 +85,14 @@ INSERT INTO Seance Values (seance_seq.nextval, 2, 1, to_date('27/04/2017 16:30',
 INSERT INTO Seance Values (seance_seq.nextval, 3, 2, to_date('10/05/2017 11:00', 'DD/MM/YYYY HH24:MI'), 1, 0);
 INSERT INTO Seance Values (seance_seq.nextval, 4, 3, to_date('10/05/2017 22:00', 'DD/MM/YYYY HH24:MI'), 3, 0);
 
-INSERT INTO Reservation Values (1, 1, 4, 0, 2, 0);
-INSERT INTO Reservation Values (2, 1, 8, 1, 2, 0);
-INSERT INTO Reservation Values (3, 2, 15, 0, 2, 2);
-INSERT INTO Reservation Values (4, 3, 16, 0, 1, 2);
-INSERT INTO Reservation Values (5, 4, 23, 0, 0, 2);
+DROP SEQUENCE numReserv_seq;
+CREATE SEQUENCE numReserv_seq start with 0 increment by 1 minvalue 0;
+
+INSERT INTO Reservation Values (1, 1, numReserv_seq.nextval, 0, 2, 0);
+INSERT INTO Reservation Values (2, 1, numReserv_seq.nextval, 1, 2, 0);
+INSERT INTO Reservation Values (3, 2, numReserv_seq.nextval, 0, 2, 2);
+INSERT INTO Reservation Values (4, 3, numReserv_seq.nextval, 0, 1, 2);
+INSERT INTO Reservation Values (5, 4, numReserv_seq.nextval, 0, 0, 2);
 
 INSERT INTO Salle Values (1, 7, 1, 3, 100, 0);
 INSERT INTO Salle Values (2, 11, 1, 5, 255, 10);
