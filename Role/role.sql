@@ -12,7 +12,7 @@ drop role lesguichetiers;
 create role lesguichetiers;
 
 grant select,insert,update,delete on Reservation to lesguichetiers;
-grant select,insert,update on Clients to lesguichetiers;
+grant select,insert,update on Client to lesguichetiers;
 grant select on Seance to lesguichetiers;
 
 drop role lesgerantsFilm;
