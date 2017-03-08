@@ -19,5 +19,5 @@ drop role lesgerantsFilm;
 create role lesgerantsFilm;
 
 grant select on Film to lesgerantsFilm;
-grant select on salle to lesgerantsFilm;
+grant select on Salle to lesgerantsFilm;
 grant select,insert,update,delete on Seance to lesgerantsFilm;
