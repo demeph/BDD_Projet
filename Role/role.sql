@@ -1,18 +1,21 @@
-create role gerantFilm;
+drop role lesclients;
+create role lesclients;
 
-grant select on Seance to lesclients
+grant select on Film to lesclients;
+grant select on Seance to lesclients;
 grant select on Cinema to lesclients;
-grant select Film to lesclients;
-grant select Casting to lesclients;
-grant select Realisateur to lesclients;
-grant select Acteur to lesclients;
+grant select on Casting to lesclients;
+grant select on Realisateur to lesclients;
+grant select on Acteur to lesclients;
 
+drop role lesguichetiers;
 create role lesguichetiers;
 
 grant select,insert,update,delete on Reservation to lesguichetiers;
 grant select,insert,update on Clients to lesguichetiers;
 grant select on Seance to lesguichetiers;
 
+drop role lesgerantsFilm;
 create role lesgerantsFilm;
 
 grant select on Film to lesgerantsFilm;
