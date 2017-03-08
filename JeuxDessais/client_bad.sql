@@ -6,4 +6,4 @@ WHERE idAct = 1;
 
 DELETE * FROM L3_35.Film;
 
-SELECT * FROM Salle;
+SELECT * FROM L3_35.Salle;
