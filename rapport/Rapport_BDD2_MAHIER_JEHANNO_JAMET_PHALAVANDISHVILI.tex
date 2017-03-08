@@ -37,7 +37,7 @@
 \renewcommand{\maketitlehooka}{\noindent MAHIER Loïc \hfill groupe 601B \\ JEHANNO Clément \hfill \\ JAMET Félix \hfill \\ PHALAVANDISHVILI  Demetre}
 
 % Titre
-\title{\vspace{\fill}\LARGE\bfseries\sffamily Rapport préliminaire de projet\protect\footnote{rapport réalisé sous \LaTeX} \vspace{\fill}}
+\title{\vspace{\fill}\LARGE\bfseries\sffamily Rapport de projet\protect\footnote{rapport réalisé sous \LaTeX} \vspace{\fill}}
 
 \begin{document}
 
@@ -504,6 +504,8 @@
 																	
 					\end{enumerate}
 
+					\newpage
+
 				\subsubsection{Les droits}
 				
 					\vspace{0.5cm}
@@ -518,7 +520,7 @@
 																		
 						\item lesGuichetiers : \\
 						
-							Nos guichetiers sont ceux qui vont réserver les places ils ont donc un accès en lecture sur les tables Seance et Reservation mais aussi un droit de modification (en écriture) sur Reservation. Cependant, il doit vérifier si le client est dans la base donc on lui permet aussi un droit de sélection sur la table Client, si il n'y est pas il peut l'ajouter donc on lui donne un droit de modification.\\
+							Nos guichetiers sont ceux qui vont réserver les places ils ont donc un accès en lecture sur les tables Seance et Reservation. Ainsi qu'un accès en écriture sur la table Reservation. Cependant, il doit vérifier si le client est dans la base donc on lui permet aussi un droit de sélection sur la table Client, si il n'y est pas il peut l'ajouter donc on lui donne un droit d'écriture.\\
 						
 						\item lesGerantsFilm : \\
 							
@@ -540,23 +542,28 @@
 																		
 						\item ville : \\
 						
-							De même, il nous semble pertinent de savoir quels cinémas se trouvent dans notre ville.					
+							De même, il nous semble pertinent de savoir quels cinémas se trouvent dans notre ville. \\					
 																													
 					\end{enumerate}
 										
 		\subsection{Atouts, améliorations envisageables et critique}
 				
 			\vspace{0.5cm}
-					
 			
+				Commençons par les atouts : notre base de données repose sur une idée concrète et proche de la réalité. On a essayé de se placer dans la peau des divers personnages qui peuvent avoir rapport de près ou de loin à notre base de données (client, gérant, guichetier, etc.). Grâce à la manière dont nos tables sont faites et à nos index, les requêtes qui sont les plus évidentes (rechercher un film, un cinéma, trouver une séance, etc.) sont des requêtes qui seront assez rapides car elles viennent chercher sur nos attributs clés ou bien nos attributs indexés.\\
+				\indent Nous avons quelques idées d'améliorations, par exemple nous pourrions rajouter des fonctionnalités qui permettent au client de réserver lui-même une séance (ainsi, pas besoin de passer par un guichetier, c'est le cas dans le cadre d'un webservice). Aussi, toujours dans le but de rendre notre base de données le plus proche possible de la réalité chaque film pourrait avoir un synopsis. Une table Avis pourrait être rajoutée contenant pour chaque client un commentaire et une note sur un film. Plus généralement on pourrait aussi ajouter des notions de prix pour les séances (modulable suivant la 3D et le cinéma).\\
+				\indent Les points noirs de notre projet sont essentiellement au niveau de la cohérence de la base, on a pas toujours été le plus cohérent possible avec la réalité car on avait du mal à trouver un compromis entre réalité et gestion de base de données. \\
+				
 														
 	\section{Conclusion}
 
-			\vspace{0.5cm}
+		\vspace{0.5cm}
+				
+			Le projet de base de données nous a permis d'acquérir des notions de sqlplus et d'approfondir ce que nous avions déjà vu en L1. Nous avons eu du mal à bien définir notre projet et à savoir si nous pensions bien la chose, ce qui a été assez formateur pour se rendre compte de nos erreurs et des mauvais choix. Par exemple, entre le premier rapport et celui-ci nous avons changé de point de vue sur la base. Cela nous a aussi permis de mieux comprendre l'objectif d'une base de données vis à vis d'une application concrète en se demandant "que peut faire un client", "comment on pourrait voir ça depuis un site web", "comment la personne qui gère les films peut agencer ses séances", etc.\\
+			\indent La base de données est donc un outil très utile en pratique et c'est grâce à ce genre de projets qu'on réalise que absolument toutes les applications concrètes en nécessitent (gestion de stocks, de personnel, etc.\\
 
-
-
-
+		\newpage
+	
 	\section{Annexe}
 					
 		\begin{figure}[!h]		
